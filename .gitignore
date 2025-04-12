@@ -1,0 +1,13 @@
+# Ignore Gradle files
+.gradle/
+build/
+.idea/
+*.iml
+
+# Ignore IDE files
+.vscode/
+*.log
+
+# Ignore local environment files
+run/
+loom-cache/

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "carpetblueaddition",
+  "version": "${version}",
+  "name": "CarpetBlueAddition",
+  "description": "A carpet extra for SSFS server",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/carpetblueaddition/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.blue0666.carpetblueaddition.client.CarpetblueadditionClient"
+    ],
+    "main": [
+      "com.blue0666.carpetblueaddition.CarpetBlue"
+    ]
+  },
+  "mixins": [
+    "carpetblueaddition.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "accessWidener": "blue.accesswidener"
+}

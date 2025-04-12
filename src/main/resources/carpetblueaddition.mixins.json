@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.blue0666.carpetblueaddition.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "rule.CobwebResistanceTuner.CobwebBlockMixin",
+    "rule.CrossDimensionProjectileLootFix.ProjectileEntityMixin",
+    "rule.TNTInWaterCantHurtBlockLikeEntity.ExplosionMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.mixins.rule.CrossDimensionProjectileLootFix;
+package com.blue0666.carpetblueaddition.mixins.rule.crossdimensionprojectilelootfix;
 
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.minecraft.entity.Entity;
@@ -33,17 +33,15 @@ public abstract class ProjectileEntityMixin extends Entity {
             at = @At("HEAD"),
             cancellable = true)
     public void getOwnerMixin(CallbackInfoReturnable<Entity> cir) {
-        if (CarpetBlueAdditionSettings.CrossDimensionProjectileLootFix) {
+        if (CarpetBlueAdditionSettings.crossDimensionProjectileLootFix) {
             if (this.owner != null && !this.owner.removed) {
                 cir.setReturnValue(this.owner);
                 cir.cancel();
             } else if (this.ownerUuid != null && this.world instanceof ServerWorld serverWorld) {
                 this.owner = serverWorld.getEntity(this.ownerUuid);
                 cir.setReturnValue(this.owner);
-                cir.cancel();
             } else {
                 cir.setReturnValue(null);
-                cir.cancel();
             }
         }
     }

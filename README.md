@@ -14,17 +14,17 @@ Change the Resistance parameter of **CobwebBlock** into **Powdersnow block**, ea
 Technically useful for storage tech since these two blocks perform similarly in most cases
 
 ```
-/carpet CobWebResistanceTuner true
+/carpet cobWebResistanceTuner true
 ```
 
 2.CrossDimensionProjectileLootFix
 
-Fix Player owned projectiles lose their player ownership when exiting portals like 23w41a
+A Fix for Player owned projectiles losing their player ownership when exiting portals like 23w41a
 
 Then you can use your CrossDimension Ghast/TNT/Firework-based Raid Farm or other powerful farms in lower versions.
 
 ```
-/carpet CrossDimensionProjectileLootFix true
+/carpet crossDimensionProjectileLootFix true
 ```
 
 3.TNTInWaterCantHurtBlockLikeEntity
@@ -35,5 +35,17 @@ In detail, this rule will make those entities immune from TNTEntity explosion(wh
 Armor stand, Item frame and **Item entity**
 
 ```
-/carpet TNTInWaterCantHurtBlockLikeEntity true
+/carpet tntInWaterCantHurtBlockLikeEntity true
+```
+
+4.SoundSuppresionIntroduce
+
+Introduce the sound suppressor of a calibrated sculk sensor in 1.20-1.21
+
+Place a trappedChest and name it "SoundSuppresor" or "声音抑制器" and put a lectern at its back with 15 pages, then use the specific channels as you want.
+
+Tips:Only block sounds are transplanted, other channels may be finished in the future versions
+
+```
+ /carpet soundSuppressionIntroduce true
 ```

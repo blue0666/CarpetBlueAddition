@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.mixins.rule.TNTInWaterCantHurtBlockLikeEntity;
+package com.blue0666.carpetblueaddition.mixins.rule.tntinwatercanthurtblocklikeentity;
 
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import com.llamalad7.mixinextras.sugar.Local;
@@ -33,7 +33,7 @@ public class ExplosionMixin {
             )
     )
     public float DistanceRedirect(double value, @Local Entity entity1, @Local Vec3d vec3d) {
-        if (CarpetBlueAdditionSettings.TNTInWaterCantHurtBlockLikeEntity) {
+        if (CarpetBlueAdditionSettings.tntInWaterCantHurtBlockLikeEntity) {
             boolean b1 = this.entity.isTouchingWater(), b2 = false;
             if (entity1.getType() == EntityType.ARMOR_STAND ||
                     entity1.getType() == EntityType.ITEM ||

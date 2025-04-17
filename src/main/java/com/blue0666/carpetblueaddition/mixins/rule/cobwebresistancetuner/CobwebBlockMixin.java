@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.mixins.rule.CobwebResistanceTuner;
+package com.blue0666.carpetblueaddition.mixins.rule.cobwebresistancetuner;
 
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.minecraft.block.BlockState;
@@ -23,7 +23,7 @@ public class CobwebBlockMixin {
     )
     public void modifySlowMovementArgs(Args args, BlockState state, World world, BlockPos pos, Entity entity) {
         // 修改 Vec3d 的参数为细雪的值
-        if (CarpetBlueAdditionSettings.CobwebResistanceTuner){
+        if (CarpetBlueAdditionSettings.cobwebResistanceTuner){
             args.set(1, new Vec3d((double)0.9F,(double)1.5F,(double)0.9F));
         }
 

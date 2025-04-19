@@ -1,3 +1,5 @@
+English | [简体中文](README_CN.md)
+
 # Carpet Blue Addition
 
 A [carpet](https://github.com/gnembon/fabric-carpet) addition for SSFS server, including some feature introduced from higher Minecraft versions.
@@ -21,7 +23,7 @@ Technically useful for storage tech since these two blocks perform similarly in 
 
 A Fix for Player owned projectiles losing their player ownership when exiting portals like 23w41a
 
-Then you can use your CrossDimension Ghast/TNT/Firework-based Raid Farm or other powerful farms in lower versions.
+Then you can use your CrossDimension Ghast/Arrow->TNT/Firework-based Raid Farm or other powerful farms in lower versions.
 
 ```
 /carpet crossDimensionProjectileLootFix true
@@ -44,7 +46,7 @@ Introduce the sound suppressor of a calibrated sculk sensor in 1.20-1.21
 
 Place a trappedChest and name it "SoundSuppresor" or "声音抑制器" and put a lectern at its back with 15 pages, then use the specific channels as you want.
 
-Tips:Only block sounds are transplanted, other channels may be finished in the future versions
+Tips:Only safe channels are transplanted, other channels are not in cosideration yet.
 
 ```
  /carpet soundSuppressionIntroduce true

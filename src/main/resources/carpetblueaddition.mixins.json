@@ -4,10 +4,16 @@
   "package": "com.blue0666.carpetblueaddition.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "rule.NetworkUtilsThreadMixin",
     "rule.cobwebresistancetuner.CobwebBlockMixin",
     "rule.crossdimensionprojectilelootfix.ProjectileEntityMixin",
+    "rule.soundsuppressionintroduce.ArmorStandEntityMixin",
+    "rule.soundsuppressionintroduce.BellBlockMixin",
     "rule.soundsuppressionintroduce.ChestBlockEntityMixin",
     "rule.soundsuppressionintroduce.ChestBlockMixin",
+    "rule.soundsuppressionintroduce.DoorBlockMixin",
+    "rule.soundsuppressionintroduce.NoteBlockMixin",
+    "rule.soundsuppressionintroduce.TNTBlockMixin",
     "rule.soundsuppressionintroduce.TrapdoorBlockMixin",
     "rule.tntinwatercanthurtblocklikeentity.ExplosionMixin"
   ],

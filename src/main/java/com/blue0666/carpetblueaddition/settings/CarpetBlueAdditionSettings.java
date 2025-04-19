@@ -24,5 +24,5 @@ public class CarpetBlueAdditionSettings {
             desc="Introduce the SoundSuppresion from 1.20-1.21",
             category = {BLUE,"feature"}
     )
-    public static boolean soundSuppressionIntruduce;
+    public static boolean soundSuppressionIntroduce;
 }

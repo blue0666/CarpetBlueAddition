@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 
 @Mixin(ChestBlockEntity.class)
-public abstract class ChestBlockEntityMixin extends LootableContainerBlockEntity implements ChestAnimationProgress , onBlockStateChanged {
+public abstract class ChestBlockEntityMixin extends LootableContainerBlockEntity implements onBlockStateChanged {
     @Shadow
     protected abstract Text getContainerName();
 

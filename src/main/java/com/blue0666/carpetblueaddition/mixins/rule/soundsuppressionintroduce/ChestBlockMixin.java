@@ -24,7 +24,9 @@ public class ChestBlockMixin {
         if (CarpetBlueAdditionSettings.soundSuppressionIntroduce && world.getBlockEntity(pos) instanceof TrappedChestBlockEntity) {
             String blockName = ((TrappedChestBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
             if ("声音抑制器".equals(blockName) || "SoundSuppressor".equalsIgnoreCase(blockName)) {
-                player.sendMessage(Text.of("你不能打开用于声音抑制的陷阱箱"), true); // 在屏幕下方显示消息
+                if (world.isClient()){
+                    player.sendMessage(Text.of("你不能打开用于声音抑制的陷阱箱"), true); // 在屏幕下方显示消息
+                }
                 cir.setReturnValue(ActionResult.SUCCESS);
             }
         }

@@ -25,4 +25,9 @@ public class CarpetBlueAdditionSettings {
             category = {BLUE,"feature"}
     )
     public static boolean soundSuppressionIntroduce;
+    @Rule(
+            desc="Introduce the Sculk Catalyst Block from 1.19, only deleting experience orbs but wont spread sculk or update neighbour",
+            category = {BLUE,"feature"}
+    )
+    public static boolean sculkCatalystIntroduce;
 }

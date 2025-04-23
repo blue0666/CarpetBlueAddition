@@ -7,6 +7,8 @@
     "rule.NetworkUtilsThreadMixin",
     "rule.cobwebresistancetuner.CobwebBlockMixin",
     "rule.crossdimensionprojectilelootfix.ProjectileEntityMixin",
+    "rule.sculkcatalystintroduce.BarrelBlockMixin",
+    "rule.sculkcatalystintroduce.LivingEntityMixin",
     "rule.soundsuppressionintroduce.ArmorStandEntityMixin",
     "rule.soundsuppressionintroduce.BellBlockMixin",
     "rule.soundsuppressionintroduce.ChestBlockEntityMixin",

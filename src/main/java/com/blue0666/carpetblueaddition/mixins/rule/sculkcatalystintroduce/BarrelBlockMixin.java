@@ -1,8 +1,9 @@
-package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
+package com.blue0666.carpetblueaddition.mixins.rule.sculkcatalystintroduce;
 
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
+import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ChestBlock;
+import net.minecraft.block.entity.BarrelBlockEntity;
 import net.minecraft.block.entity.TrappedChestBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
@@ -16,16 +17,16 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ChestBlock.class)
-public class ChestBlockMixin {
+@Mixin(BarrelBlock.class)
+public class BarrelBlockMixin {
     @Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
     private void onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
-        // 提示玩家不能打开用于更新抑制的陷阱箱
-        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce && world.getBlockEntity(pos) instanceof TrappedChestBlockEntity) {
-            String blockName = ((TrappedChestBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
-            if ("声音抑制器".equals(blockName) || "SoundSuppressor".equalsIgnoreCase(blockName)) {
+        // 提示玩家幽匿催发体是没有gui的
+        if (CarpetBlueAdditionSettings.sculkCatalystIntroduce && world.getBlockEntity(pos) instanceof BarrelBlockEntity) {
+            String blockName = ((BarrelBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
+            if ("幽匿催发体".equals(blockName) || "sculkcatalyst".equalsIgnoreCase(blockName)) {
                 if (world.isClient()){
-                    player.sendMessage(Text.of("你不能打开用于声音抑制的陷阱箱"), true); // 在屏幕下方显示消息
+                    player.sendMessage(Text.of("你不能打开幽匿催发体的物品栏界面"), true); // 在屏幕下方显示消息
                 }
                 cir.setReturnValue(ActionResult.SUCCESS);
             }

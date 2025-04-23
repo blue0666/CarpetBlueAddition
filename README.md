@@ -51,3 +51,13 @@ Tips:Only safe channels are transplanted, other channels are not in cosideration
 ```
  /carpet soundSuppressionIntroduce true
 ```
+
+5.SculkCatalystIntroduce
+
+Introduce the Sculk Catalyst block from 1.19
+
+Now a barrel block with name "sculkcatalyst" or "幽匿催发体" will work like that(absorb experience from entity death), but it wont spread sculk, play animation or update neighboor.
+
+```
+/carpet sculkCatalystIntroduce true
+```

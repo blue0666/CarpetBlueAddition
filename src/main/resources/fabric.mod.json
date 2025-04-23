@@ -4,10 +4,12 @@
   "version": "${version}",
   "name": "CarpetBlueAddition",
   "description": "A carpet extra for SSFS server",
-  "authors": [],
-  "contact": {},
-  "license": "All-Rights-Reserved",
-  "icon": "assets/carpetblueaddition/icon.png",
+  "authors": ["blue0666"],
+  "contact": {
+    "repo": "https://github.com/blue0666/CarpetBlueAddition"
+  },
+  "license": "MIT",
+  "icon": "assets/carpet-blue-addition/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [

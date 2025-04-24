@@ -25,7 +25,7 @@ public class BarrelBlockMixin {
         if (CarpetBlueAdditionSettings.sculkCatalystIntroduce && world.getBlockEntity(pos) instanceof BarrelBlockEntity) {
             String blockName = ((BarrelBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
             if ("幽匿催发体".equals(blockName) || "sculkcatalyst".equalsIgnoreCase(blockName)) {
-                if (world.isClient()){
+                if (world.getServer().isSinglePlayer()){
                     player.sendMessage(Text.of("你不能打开幽匿催发体的物品栏界面"), true); // 在屏幕下方显示消息
                 }
                 cir.setReturnValue(ActionResult.SUCCESS);

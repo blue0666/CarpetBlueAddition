@@ -68,4 +68,6 @@ Turn its hardness into endstone like the softObsidian rule
 
 7.NewWitchDropIntroduce
 
+<del>"Totally Not Vanilla"</del>
+
 Introduce the new witch drop in 1.21+

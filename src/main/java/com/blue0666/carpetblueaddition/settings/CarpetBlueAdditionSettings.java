@@ -30,4 +30,14 @@ public class CarpetBlueAdditionSettings {
             category = {BLUE,"feature"}
     )
     public static boolean sculkCatalystIntroduce;
+    @Rule(
+            desc="Make crying-obsidian easy to mine",
+            category={BLUE,"feature"}
+    )
+    public static boolean softCryingObsidian;
+    @Rule(
+            desc="Introduce the new witch drop in 1.21+",
+            category={BLUE,"feature"}
+    )
+    public static boolean newWitchDropIntroduce;
 }

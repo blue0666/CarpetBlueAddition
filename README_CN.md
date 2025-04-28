@@ -2,7 +2,7 @@
 
 # Carpet Blue Addition
 
-为Ssfs生电区定制的[地毯](https://github.com/gnembon/fabric-carpet)附属，提供了一些高版本特性移植
+为Ssfs生电区定制的[地毯](https://github.com/gnembon/fabric-carpet)附属，提供了一些高版本特性<del>和not vanilla的轮椅</del>移植
 
 ## Feature
 
@@ -10,9 +10,9 @@
 
 模组的第一个小规则awa
 
-"我们低版本没有细雪啊这个收集用不了= ="-xinianxiyuan
+"我们低版本没有细雪啊这个收集用不了= ="-xinianxiyuan✅
 
-将蜘蛛网阻力计算的系数修改成和细雪完全一致
+将蜘蛛网阻力计算的系数修改成和细雪完全一致(但是依然推动会被破坏，而不是像细雪一样可推动)
 
 2.跨纬度投掷物实体搜索修复``CrossDimensionProjectileLootFix``
 
@@ -54,3 +54,15 @@ Tips:如果要防崩溃可以安装Carpet TIS Addition, 那个的防崩溃选项
 将幽匿催发体能吸收经验的功能移植到低版本，现在将木桶命名为幽匿催发体或者sculkcatalyst就能让对应范围(和高版本一致)内的生物死亡不掉落经验
 
 但是蔓延幽匿方块，催发体动画和发出nc更新这三个步骤就没有了
+
+6.易碎哭泣黑曜石``softCryingObsidian``
+
+既然黑曜石可以易碎，那么哭泣黑曜石为什么不能呢？
+
+类似的，将硬度修改为和末地石一样,方便拆迁奇奇怪怪的建筑和爆炸室(逃)
+
+7.新版女巫掉落物移植``newwitchdropintroduce``
+
+"用这个功能的不要说自己在玩原版生存(划掉)--YanHwa"
+
+移植1.21+的新版女巫掉落物

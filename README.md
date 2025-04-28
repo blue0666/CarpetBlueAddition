@@ -61,3 +61,11 @@ Now a barrel block with name "sculkcatalyst" or "幽匿催发体" will work like
 ```
 /carpet sculkCatalystIntroduce true
 ```
+
+6.SoftCryObsidian
+
+Turn its hardness into endstone like the softObsidian rule
+
+7.NewWitchDropIntroduce
+
+Introduce the new witch drop in 1.21+

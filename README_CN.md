@@ -66,3 +66,19 @@ Tips:如果要防崩溃可以安装Carpet TIS Addition, 那个的防崩溃选项
 "<del>用这个功能的不要说自己在玩原版生存</del>--YanHwa"
 
 移植1.21+的新版女巫掉落物
+
+8.末影珍珠加载区块修改``enderpearlLoadTicketIntroduce/enderpearlDiagonalChunkLoader``
+
+开启沿轴运动不加载规则，仅会在两个方向同时运动的情况下加载区块，用于炮的测试
+
+开启全加载会覆盖沿轴规则
+
+tips:高版本的珍珠有三个功能:
+
+1.加载未加载的同维度新区块
+
+2.跨纬度直接传送玩家
+
+3.在世界重载时自动加载区块
+
+目前只写了第一个(lazy)

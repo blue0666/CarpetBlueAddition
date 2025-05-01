@@ -1,14 +1,16 @@
 package com.blue0666.carpetblueaddition.settings;
 
 import carpet.settings.Rule;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 
 public class CarpetBlueAdditionSettings {
 
     public static final String BLUE = "BLUE";
+
     @Rule(
-            desc = "Change the resistance of cobweb into powdersnowblock" ,
-            category = {BLUE,"feature"}
-    )
+            desc ="Change the resistance of cobweb into powdersnowblock",
+            category = {BLUE, "feature"})
     public static boolean cobwebResistanceTuner;
     @Rule(
             desc = "Fix Player owned projectiles lose their player ownership when exiting portals like 23w41a",
@@ -40,4 +42,16 @@ public class CarpetBlueAdditionSettings {
             category={BLUE,"feature"}
     )
     public static boolean newWitchDropIntroduce;
+    @Rule(
+            desc="Introduce the ender_pearl chunk load ticket in 1.21.2+, " +
+                    "tips :it will cover the enderpearlDiagonalChunkLoader rule",
+            category={BLUE,"feature"}
+    )
+    public static boolean enderpearlLoadTicketIntroduce;
+    @Rule(
+            desc="Enables chunk loading for ender_pearl that occur diagonally (both X and Z axes), " +
+                    "while preventing chunk load on single-axis movements.",
+            category={BLUE,"feature"}
+    )
+    public static boolean enderpearlDiagonalChunkLoader;
 }

@@ -71,3 +71,7 @@ Turn its hardness into endstone like the softObsidian rule
 <del>"Totally Not Vanilla"</del>
 
 Introduce the new witch drop in 1.21+
+
+8.enderPearlLoadTicketIntroduce/enderPearlDiagonalChunkLoader
+
+Introduce the enderPearl Chunk loading in 1.21.2+

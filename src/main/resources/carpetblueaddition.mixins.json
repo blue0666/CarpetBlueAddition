@@ -7,6 +7,8 @@
     "rule.NetworkUtilsThreadMixin",
     "rule.cobwebresistancetuner.CobwebBlockMixin",
     "rule.crossdimensionprojectilelootfix.ProjectileEntityMixin",
+    "rule.enderpearlchunkloader.EnderPearlEntityMixin",
+    "rule.enderpearldiagonalchunkloader.EnderPearlEntityMixin",
     "rule.newwitchdropIntroduce.LivingEntityMixin",
     "rule.sculkcatalystintroduce.BarrelBlockMixin",
     "rule.sculkcatalystintroduce.LivingEntityMixin",

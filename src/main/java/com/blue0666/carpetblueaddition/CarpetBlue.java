@@ -5,10 +5,11 @@ import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CarpetBlue implements ModInitializer {
+public class CarpetBlue implements ModInitializer  {
     public static final String MOD_ID = "carpetblueaddition";
     public static final String MOD_NAME = "CarpetBlueAddition";
     private static String VERSION;
+
 
     public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
     @Override

@@ -9,7 +9,7 @@
     "repo": "https://github.com/blue0666/CarpetBlueAddition"
   },
   "license": "MIT",
-  "icon": "assets/carpet-blue-addition/icon.png",
+  "icon": "assets/carpetblueaddition/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [

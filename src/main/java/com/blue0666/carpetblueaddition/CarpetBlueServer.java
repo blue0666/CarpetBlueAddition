@@ -39,7 +39,6 @@ public class CarpetBlueServer implements CarpetExtension {
 
     @Override
     public void onGameStarted() {
-        CarpetBlue.LOGGER.info("Carpet-Blue-Addition started");
         CarpetServer.settingsManager.parseSettingsClass(CarpetBlueAdditionSettings.class);
     }
 

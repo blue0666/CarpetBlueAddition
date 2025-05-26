@@ -23,9 +23,11 @@
   "rule.newWitchDropIntroduce.desc": "移植新版女巫掉落物",
 
   "rule.enderpearlLoadTicketIntroduce.name": "珍珠区块加载移植",
-  "rule.enderpearlLoadTicketIntroduce.desc": "移植珍珠区块自加载，范围是1*1强加载40ticks，但是注意这会覆盖<珍珠沿轴不加载>的规则",
+  "rule.enderpearlLoadTicketIntroduce.desc": "移植珍珠区块自加载，珍珠只有他的拥有者在线时可以加载，范围是1*1强加载40ticks，但是注意这会覆盖<珍珠沿轴不加载>的规则",
 
   "rule.enderpearlDiagonalChunkLoader.name": "珍珠斜向运动区块加载",
-  "rule.enderpearlDiagonalChunkLoader.desc": "珍珠斜向运动时会加载区块，只要XZ有一个轴坐标不变就不加载，用于一些特殊的珍珠炮测试"
+  "rule.enderpearlDiagonalChunkLoader.desc": "珍珠斜向运动时会加载区块，只要XZ有一个轴坐标不变就不加载，用于一些特殊的珍珠炮测试和弱加载炮运行",
 
+  "rule.enderpearlChunkLoaderOnPlayerLogin.name": "世界重启玩家珍珠自加载",
+  "rule.enderpearlChunkLoaderOnPlayerLogin.desc": "每个玩家登录进入游戏时，他丢过末影珍珠的区块都会开始自加载"
 }

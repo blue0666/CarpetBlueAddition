@@ -19,7 +19,7 @@ public class CarpetBlueAdditionSettings {
     public static boolean crossDimensionProjectileLootFix;
     @Rule(
             desc="Introduce the new explosion feature that Damagesource touching water will not hurt BlockLikeEntities",
-            category = {BLUE,"feature"}
+            category = {BLUE,"feature","tnt"}
     )
     public static boolean tntInWaterCantHurtBlockLikeEntity;
     @Rule(
@@ -34,7 +34,7 @@ public class CarpetBlueAdditionSettings {
     public static boolean sculkCatalystIntroduce;
     @Rule(
             desc="Make crying-obsidian easy to mine",
-            category={BLUE,"feature"}
+            category={BLUE,"feature","client"}
     )
     public static boolean softCryingObsidian;
     @Rule(
@@ -54,4 +54,10 @@ public class CarpetBlueAdditionSettings {
             category={BLUE,"feature"}
     )
     public static boolean enderpearlDiagonalChunkLoader;
+    @Rule(
+            desc="Now when player login in, all the pearls thrown by him will automatically be called and load chunks for 40 ticks, "+
+                     "can work together will other loading system to permanently load chunks",
+            category={BLUE,"feature"}
+    )
+    public static boolean enderpearlChunkLoaderOnPlayerLogin;
 }

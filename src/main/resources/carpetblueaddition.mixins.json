@@ -12,6 +12,7 @@
     "rule.enderpearlchunkloaderonplayerlogin.EntityMixin",
     "rule.enderpearlchunkloaderonplayerlogin.ServerPlayerEntityMixin",
     "rule.enderpearldiagonalchunkloader.EnderPearlEntityMixin",
+    "rule.leashableboat.BoatEntityMixin",
     "rule.newwitchdropIntroduce.LivingEntityMixin",
     "rule.sculkcatalystintroduce.BarrelBlockMixin",
     "rule.sculkcatalystintroduce.LivingEntityMixin",

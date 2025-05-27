@@ -60,4 +60,9 @@ public class CarpetBlueAdditionSettings {
             category={BLUE,"feature"}
     )
     public static boolean enderpearlChunkLoaderOnPlayerLogin;
+    @Rule(
+            desc="Boats can be leashed by leads",
+            category={BLUE,"feature"}
+    )
+    public static boolean leashableBoat;
 }

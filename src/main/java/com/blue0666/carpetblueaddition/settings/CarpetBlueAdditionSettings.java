@@ -1,6 +1,9 @@
 package com.blue0666.carpetblueaddition.settings;
 
+import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
+import carpet.settings.Validator;
+import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 
@@ -27,6 +30,21 @@ public class CarpetBlueAdditionSettings {
             category = {BLUE,"feature"}
     )
     public static boolean soundSuppressionIntroduce;
+    @Rule(
+            desc="Control the suppressing detector's radius, max value 64",
+            category = {BLUE,"feature"},
+            options = {"8","16","32","64"},
+            strict = false,
+            validate = soundSuppressionMaxRadiusValue.class
+    )
+    public static int soundSuppressionRadius=16;
+    private static class soundSuppressionMaxRadiusValue extends Validator<Integer> {
+        @Override public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue, String string) {
+            return (newValue > 0 && newValue <= 64) ? newValue : null;
+        }
+        @Override
+        public String description() { return "You must choose a value from 1 to 64";}
+    }
     @Rule(
             desc="Introduce the Sculk Catalyst Block from 1.19, only deleting experience orbs but wont spread sculk or update neighbour",
             category = {BLUE,"feature"}

@@ -13,6 +13,9 @@
   "rule.soundSuppressionIntroduce.name": "声音抑制移植",
   "rule.soundSuppressionIntroduce.desc": "移植1.20-1.21的声音抑制器，将陷阱箱命名为声音抑制器并正确摆放即可使用",
 
+  "rule.soundSuppressionRadius.name": "声音抑制器范围控制",
+  "rule.soundSuppressionRadius.desc": "控制声音抑制器的监听范围半径，可输入一个正整数，原版默认为17格，为了卡顿和性能考虑，最大不能超过64",
+
   "rule.sculkCatalystIntroduce.name": "幽匿催发体移植",
   "rule.sculkCatalystIntroduce.desc": "移植幽匿催发体，将木桶命名为幽匿催发体即可阻止范围内经验生成",
 

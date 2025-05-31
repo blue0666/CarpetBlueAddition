@@ -29,6 +29,7 @@
     "rule.tntinwatercanthurtblocklikeentity.ExplosionMixin"
   ],
   "client": [
+    "rule.leashableboat.ClientPlayNetworkHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

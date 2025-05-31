@@ -1,6 +1,9 @@
 package com.blue0666.carpetblueaddition.mixins.rule.leashableboat;
 
+import com.blue0666.carpetblueaddition.other.onLeashingBoat;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,6 +15,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,12 +23,17 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BoatEntity.class)
-public abstract class BoatEntityMixin extends Entity{
+public abstract class BoatEntityMixin extends Entity implements onLeashingBoat {
     public BoatEntityMixin(EntityType<?> type, World world) {
         super(type, world);
     }
     @Unique
     private Entity holdingEntity = null;
+    @Unique
+    private int holdingEntityId ;
+    @Nullable
+    @Unique
+    private int leashNbt;
 
     @Unique
     public boolean canBeLeashedBy(PlayerEntity player) {
@@ -91,5 +100,24 @@ public abstract class BoatEntityMixin extends Entity{
             }
             cir.setReturnValue(ActionResult.success(this.world.isClient));
         }
+    }
+
+    @Environment(EnvType.CLIENT)
+    @Unique
+    @Override
+    public void setHoldingEntityId(int id) {
+        this.holdingEntityId = id;
+        Entity entity = this.world.getEntityById(id);
+        this.attachLeash(entity,false);
+    }
+
+    @Unique
+    @Nullable
+    public Entity getHoldingEntity() {
+        if (this.holdingEntity == null && this.holdingEntityId != 0 && this.world.isClient) {
+            this.holdingEntity = this.world.getEntityById(this.holdingEntityId);
+        }
+
+        return this.holdingEntity;
     }
 }

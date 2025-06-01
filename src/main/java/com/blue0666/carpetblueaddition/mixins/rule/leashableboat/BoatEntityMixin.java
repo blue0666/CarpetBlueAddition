@@ -78,14 +78,12 @@ public abstract class BoatEntityMixin extends Entity implements onLeashingBoat {
     @Unique
     private void sendLeashPacket(Entity entity) {
         if (this.world instanceof ServerWorld serverWorld) {
-            System.out.println("拴实体发包发送");
             serverWorld.getChunkManager().sendToOtherNearbyPlayers((Entity)this, new EntityAttachS2CPacket(((Entity)this), this.holdingEntity));
         }
     }
 
     @Inject(method = "interact", at = @At("HEAD"), cancellable = true)
     public void interact(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        System.out.println(holdingEntity);
         if (!CarpetBlueAdditionSettings.leashableBoat) {
             return;
         }
@@ -96,7 +94,6 @@ public abstract class BoatEntityMixin extends Entity implements onLeashingBoat {
             if (!this.world.isClient) {
                 this.attachLeash(player, true);
                 stack.decrement(1);
-                System.out.println("栓绳拴船");
             }
             cir.setReturnValue(ActionResult.success(this.world.isClient));
         }

@@ -24,7 +24,7 @@ public class CarpetBlueAdditionSettings {
             desc="Introduce the new explosion feature that Damagesource touching water will not hurt BlockLikeEntities",
             category = {BLUE,"feature","tnt"}
     )
-    public static boolean tntInWaterCantHurtBlockLikeEntity;
+    public static boolean kExplosionIntroduce;
     @Rule(
             desc="Introduce the SoundSuppresion from 1.20-1.21",
             category = {BLUE,"feature"}
@@ -78,9 +78,15 @@ public class CarpetBlueAdditionSettings {
             category={BLUE,"feature"}
     )
     public static boolean enderpearlChunkLoaderOnPlayerLogin;
+//    @Rule(
+//            desc="Boats can be leashed by leads",
+//            category={BLUE,"feature"}
+//    )
+    public static boolean leashableBoat = false;
     @Rule(
-            desc="Boats can be leashed by leads",
+            desc = "Leash Villagers!",
             category={BLUE,"feature"}
     )
-    public static boolean leashableBoat;
+    public static boolean leashableVillager;
+
 }

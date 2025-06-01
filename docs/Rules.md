@@ -24,7 +24,7 @@ Then you can use your CrossDimension Ghast/Arrow->TNT/Firework-based Raid Farm o
 * Open Method: `/carpet crossDimensionProjectileLootFix ture`
 * Categories: `BLUE` , `survival`, `bugfix`
 
-### TNTInWaterCantHurtBlockLikeEntity
+### K_Explosion
 
 Introduce the magic explosion feature that Damagesource touching water will not hurt BlockLikeEntities in 24w33a, discoverd by KD.
 
@@ -32,7 +32,7 @@ In detail, this rule will make those entities immune from TNTEntity explosion(wh
 
 * Default Value: `false`
 * Optional Parameters: `true`, `false`
-* Open Method: `/carpet tntInWaterCantHurtBlockLikeEntity ture`
+* Open Method: `/carpet kExplosionIntroduce ture`
 * Categories: `BLUE` , `feature` , `tnt`
 
 ### SoundSuppresionIntroduce
@@ -59,6 +59,8 @@ Tips:Only safe channels are transplanted, other channels are not in cosideration
 |   10   | TNT block not deleted on fused(TNT looting duper) |
 |   10   | suppress when noteblock play                      |
 |   11   | suppress when bell rings                          |
+
+#### SoundSuppressionRadius
 
 ### SculkCatalystIntroduce
 
@@ -106,3 +108,12 @@ Introduce the enderPearl Chunk loading in 1.21.2+
 |  1  | enderpearlLoadTicketIntroduce      | Ender pearl load chunks in movement                                                             | Cover rule 2                             |
 |  2  | enderpearlDiagonalChunkLoader      | Ender pearl will only load chunks when<br /> both X&Z deviation larger than 0.01                | For Lazy Pearl Cannons                   |
 |  3  | enderpearlChunkLoaderOnPlayerLogin | Player login will automatically load chunks<br /> containing the pearls he thrown for 40 ticks | Can cooeprate with rule 1 to load chunks |
+
+### LeashableVillager
+
+Leash the villager lol
+
+* Default Value: `false`
+* Optional Parameters: `true`, `false`
+* Open Method: `/carpet leashableVillager true`
+* Categories: `BLUE` , `feature`

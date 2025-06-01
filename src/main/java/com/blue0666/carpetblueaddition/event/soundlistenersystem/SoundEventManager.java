@@ -1,6 +1,6 @@
 package com.blue0666.carpetblueaddition.event.soundlistenersystem;
 
-import com.blue0666.carpetblueaddition.other.onBlockStateChanged;
+import com.blue0666.carpetblueaddition.interfaces.onBlockStateChanged;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.TrappedChestBlockEntity;

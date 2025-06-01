@@ -1,7 +1,7 @@
 package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
 
 import com.blue0666.carpetblueaddition.exception.IAESoundSuppresionException;
-import com.blue0666.carpetblueaddition.other.onBlockStateChanged;
+import com.blue0666.carpetblueaddition.interfaces.onBlockStateChanged;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
@@ -9,7 +9,6 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.block.entity.TrappedChestBlockEntity;
-import net.minecraft.client.block.ChestAnimationProgress;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;

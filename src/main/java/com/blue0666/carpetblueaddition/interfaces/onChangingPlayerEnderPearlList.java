@@ -1,7 +1,6 @@
-package com.blue0666.carpetblueaddition.other;
+package com.blue0666.carpetblueaddition.interfaces;
 
 import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
-import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.Set;
 

@@ -12,7 +12,8 @@
     "rule.enderpearlchunkloaderonplayerlogin.EntityMixin",
     "rule.enderpearlchunkloaderonplayerlogin.ServerPlayerEntityMixin",
     "rule.enderpearldiagonalchunkloader.EnderPearlEntityMixin",
-    "rule.leashableboat.BoatEntityMixin",
+    "rule.kexplosionintroduce.ExplosionMixin",
+    "rule.leashablevillager.MerchantEntityMixin",
     "rule.newwitchdropIntroduce.LivingEntityMixin",
     "rule.sculkcatalystintroduce.BarrelBlockMixin",
     "rule.sculkcatalystintroduce.LivingEntityMixin",
@@ -25,11 +26,7 @@
     "rule.soundsuppressionintroduce.DoorBlockMixin",
     "rule.soundsuppressionintroduce.NoteBlockMixin",
     "rule.soundsuppressionintroduce.TNTBlockMixin",
-    "rule.soundsuppressionintroduce.TrapdoorBlockMixin",
-    "rule.tntinwatercanthurtblocklikeentity.ExplosionMixin"
-  ],
-  "client": [
-    "rule.leashableboat.ClientPlayNetworkHandlerMixin"
+    "rule.soundsuppressionintroduce.TrapdoorBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

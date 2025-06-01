@@ -2,7 +2,7 @@ package com.blue0666.carpetblueaddition.mixins.rule.enderpearlchunkloaderonplaye
 
 import com.blue0666.carpetblueaddition.CarpetBlue;
 import com.blue0666.carpetblueaddition.event.enderpearlChunkLoader.EnderPearlChunkLoaderHelper;
-import com.blue0666.carpetblueaddition.other.onChangingPlayerEnderPearlList;
+import com.blue0666.carpetblueaddition.interfaces.onChangingPlayerEnderPearlList;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.entity.Entity;
@@ -13,11 +13,9 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.nbt.NbtOps;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;

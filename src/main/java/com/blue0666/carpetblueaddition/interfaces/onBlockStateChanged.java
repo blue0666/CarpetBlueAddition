@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.other;
+package com.blue0666.carpetblueaddition.interfaces;
 
 import net.minecraft.util.math.BlockPos;
 

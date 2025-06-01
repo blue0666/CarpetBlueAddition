@@ -1,6 +1,6 @@
 package com.blue0666.carpetblueaddition.mixins.rule.enderpearlchunkloaderonplayerlogin;
 
-import com.blue0666.carpetblueaddition.other.onChangingPlayerEnderPearlList;
+import com.blue0666.carpetblueaddition.interfaces.onChangingPlayerEnderPearlList;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,7 +12,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;

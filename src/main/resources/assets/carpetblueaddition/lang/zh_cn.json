@@ -7,8 +7,8 @@
   "rule.crossDimensionProjectileLootFix.name": "投掷物跨纬度掠夺修复",
   "rule.crossDimensionProjectileLootFix.desc": "修复跨纬度的投掷物无法搜索到主人的bug",
 
-  "rule.tntInWaterCantHurtBlockLikeEntity.name": "K爆TNT移植",
-  "rule.tntInWaterCantHurtBlockLikeEntity.desc": "移植1.21.2+K爆特性，由team_109发现",
+  "rule.kExplosionIntroduce.name": "K爆TNT移植",
+  "rule.kExplosionIntroduce.desc": "移植1.21.2+K爆特性，由team_109发现",
 
   "rule.soundSuppressionIntroduce.name": "声音抑制移植",
   "rule.soundSuppressionIntroduce.desc": "移植1.20-1.21的声音抑制器，将陷阱箱命名为声音抑制器并正确摆放即可使用",
@@ -32,5 +32,8 @@
   "rule.enderpearlDiagonalChunkLoader.desc": "珍珠斜向运动时会加载区块，只要XZ有一个轴坐标不变就不加载，用于一些特殊的珍珠炮测试和弱加载炮运行",
 
   "rule.enderpearlChunkLoaderOnPlayerLogin.name": "世界重启玩家珍珠自加载",
-  "rule.enderpearlChunkLoaderOnPlayerLogin.desc": "每个玩家登录进入游戏时，他丢过末影珍珠的区块都会开始自加载"
+  "rule.enderpearlChunkLoaderOnPlayerLogin.desc": "每个玩家登录进入游戏时，他丢过末影珍珠的区块都会开始自加载",
+
+  "rule.leashableVillager.name": "拴绳可栓村民",
+  "rule.leashableVillager.desc": "拴绳右键村民可以直接拴住"
 }

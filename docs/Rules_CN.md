@@ -34,7 +34,7 @@
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet tntInWaterCantHurtBlockLikeEntity ture`
+* 开启方法: `/carpet kExplosionIntroduce ture`
 * 分类: `BLUE` , `feature` , `tnt`
 
 ### 声音抑制移植
@@ -65,6 +65,15 @@ Tips:如果要防崩溃可以安装Carpet TIS Addition, 那个的防崩溃选项
 |  11  | 钟激活时抑制                              |
 
 ![声音抑制示意图](.././src/main/resources/assets/carpetblueaddition/SoundSuppression.png)
+
+#### 声音抑制范围控制
+
+自定义声音抑制箱子的范围，输入值表示半径，1-64格，>64并不是不能实现，只是为了性能考虑
+
+* 默认值: `false`
+* 可选参数: `8`, `16`, `32`, `64`
+* 切换示例: `/carpet soundSuppressionIntroduce 64`
+* 分类: `BLUE` , `feature`
 
 ### 幽匿催发体移植
 
@@ -118,3 +127,12 @@ Tips:如果要防崩溃可以安装Carpet TIS Addition, 那个的防崩溃选项
 |    1    | 珍珠区块加载移植       | 珍珠在运动时会自动加载区块                      | 会覆盖2             |
 |    2    | 珍珠斜向运动区块加载   | 珍珠只有XZ轴都在移动(前后tick偏移都>0.01)才加载 | 用于弱加载炮        |
 |    3    | 世界重启玩家珍珠自加载 | 玩家进入世界会自动加载一次他丢了珍珠的区块      | 可和1组合来加载区块 |
+
+### 拴绳可以栓村民
+
+顾名思义，让村民的是否可以被拴住改为true
+
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet leashableVillager ture`
+* 分类: `BLUE` , `feature`

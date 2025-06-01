@@ -1,6 +1,6 @@
 package com.blue0666.carpetblueaddition.mixins.rule.leashableboat;
 
-import com.blue0666.carpetblueaddition.other.onLeashingBoat;
+import com.blue0666.carpetblueaddition.interfaces.onLeashingBoat;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

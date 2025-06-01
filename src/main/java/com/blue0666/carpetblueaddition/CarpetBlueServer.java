@@ -3,12 +3,12 @@ package com.blue0666.carpetblueaddition;
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.utils.Translations;
+import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.server.MinecraftServer;
 import org.apache.logging.log4j.Logger;
-import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;

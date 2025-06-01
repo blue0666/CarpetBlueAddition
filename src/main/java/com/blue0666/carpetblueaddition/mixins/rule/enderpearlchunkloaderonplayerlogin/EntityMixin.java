@@ -3,7 +3,7 @@ package com.blue0666.carpetblueaddition.mixins.rule.enderpearlchunkloaderonplaye
 import com.blue0666.carpetblueaddition.interfaces.onChangingPlayerEnderPearlList;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
+import net.minecraft.entity.thrown.ThrownEnderpearlEntity;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -20,10 +20,10 @@ public abstract class EntityMixin {
 
     @Inject(method = "remove", at = @At("RETURN"))
     public void removeEnderPearlFromList(CallbackInfo ci) {
-        if ((Object) this instanceof EnderPearlEntity pearl) {
+        if ((Object) this instanceof ThrownEnderpearlEntity pearl) {
             if (CarpetBlueAdditionSettings.enderpearlChunkLoaderOnPlayerLogin) {
                 if (pearl.getOwner() != null) {
-                    Set<EnderPearlEntity> set = ((onChangingPlayerEnderPearlList) pearl.getOwner()).getEnderPearls();
+                    Set<ThrownEnderpearlEntity> set = ((onChangingPlayerEnderPearlList) pearl.getOwner()).getEnderPearls();
                     set.remove(pearl);
                 }
             }

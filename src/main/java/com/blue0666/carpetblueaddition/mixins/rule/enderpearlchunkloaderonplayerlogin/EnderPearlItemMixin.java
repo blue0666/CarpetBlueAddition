@@ -5,6 +5,7 @@ import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
+import net.minecraft.entity.thrown.ThrownEnderpearlEntity;
 import net.minecraft.item.EnderPearlItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -31,10 +32,10 @@ public class EnderPearlItemMixin {
             shift = At.Shift.BEFORE)
             ,locals = LocalCapture.CAPTURE_FAILHARD
     )
-    public void use(World world, PlayerEntity user, Hand hand,  CallbackInfoReturnable<TypedActionResult<ItemStack>> cir,@Local EnderPearlEntity enderPearlEntity){
+    public void use(World world, PlayerEntity user, Hand hand,  CallbackInfoReturnable<TypedActionResult<ItemStack>> cir,@Local ThrownEnderpearlEntity enderPearlEntity){
         if (CarpetBlueAdditionSettings.enderpearlChunkLoaderOnPlayerLogin){
             if (user!=null & user instanceof ServerPlayerEntity){
-                Set<EnderPearlEntity> set = ((onChangingPlayerEnderPearlList)user).getEnderPearls();
+                Set<ThrownEnderpearlEntity> set = ((onChangingPlayerEnderPearlList)user).getEnderPearls();
                 set.add(enderPearlEntity);
             }
         }

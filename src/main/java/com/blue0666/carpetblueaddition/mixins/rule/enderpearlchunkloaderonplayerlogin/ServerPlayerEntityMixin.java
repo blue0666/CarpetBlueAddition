@@ -9,6 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
+import net.minecraft.entity.thrown.ThrownEnderpearlEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
@@ -28,22 +29,23 @@ import java.util.*;
 
 @Mixin(ServerPlayerEntity.class)
 abstract public class ServerPlayerEntityMixin extends PlayerEntity implements onChangingPlayerEnderPearlList {
+    public ServerPlayerEntityMixin(World world, GameProfile profile) {
+        super(world, profile);
+    }
+
     @Unique
-    public Set<EnderPearlEntity> getEnderPearls() {
+    public Set<ThrownEnderpearlEntity> getEnderPearls() {
         return this.enderPearls;
     }
 
     @Unique
-    public void setEnderPearls(Set<EnderPearlEntity> enderPearls) {
+    public void setEnderPearls(Set<ThrownEnderpearlEntity> enderPearls) {
         this.enderPearls = enderPearls;
     }
 
     @Unique
-    public Set<EnderPearlEntity> enderPearls = new HashSet<>();
+    public Set<ThrownEnderpearlEntity> enderPearls = new HashSet<>();
 
-    public ServerPlayerEntityMixin(World world, BlockPos pos, float yaw, GameProfile profile) {
-        super(world, pos, yaw, profile);
-    }
 
     @Inject(method = "writeCustomDataToNbt",at = @At("RETURN"))
     public void writeCustomDataToNbtMixin(NbtCompound nbt, CallbackInfo ci){

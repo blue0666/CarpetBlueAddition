@@ -3,9 +3,8 @@ package com.blue0666.carpetblueaddition.mixins.rule.enderpearldiagonalchunkloade
 import com.blue0666.carpetblueaddition.event.enderpearlChunkLoader.EnderPearlChunkLoaderHelper;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
-import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
+import net.minecraft.entity.thrown.ThrownEnderpearlEntity;
+import net.minecraft.entity.thrown.ThrownItemEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -21,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import static java.lang.Math.abs;
 
-@Mixin(EnderPearlEntity.class)
+@Mixin(ThrownEnderpearlEntity.class)
 public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
     @Unique
     int i=0,j=0;

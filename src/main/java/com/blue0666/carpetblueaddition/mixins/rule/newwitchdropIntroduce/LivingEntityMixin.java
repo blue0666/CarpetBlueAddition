@@ -41,9 +41,10 @@ public abstract class LivingEntityMixin extends Entity {
             if ((LivingEntity)((Object) this) instanceof WitchEntity) {
                 // 替换为数据驱动的自定义掉落表
                 Identifier customLootTable = new Identifier("custom_loot", "entities/witch");
-                LootTable lootTable = ((LivingEntity)(Object) this).world.getServer().getLootManager().getTable(customLootTable);
+                LootTable lootTable = ((LivingEntity)(Object) this).world.getServer().getLootManager().getSupplier(customLootTable);
                 LootContext.Builder builder = this.invokeGetLootContextBuilder(causedByPlayer, source);
-                lootTable.generateLoot(builder.build(LootContextTypes.ENTITY), stack -> ((LivingEntity) (Object) this).dropStack(stack));
+//                lootTable.generateLoot(builder.build(LootContextTypes.ENTITY), stack -> ((LivingEntity) (Object) this).dropStack(stack));
+                lootTable.dropLimited(builder.build(LootContextTypes.ENTITY), this::dropStack);
                 ci.cancel();
             }
         }

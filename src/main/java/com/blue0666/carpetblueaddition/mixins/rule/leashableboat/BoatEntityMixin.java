@@ -96,7 +96,7 @@ public abstract class BoatEntityMixin extends Entity implements onLeashingBoat {
                 this.attachLeash(player, true);
                 stack.decrement(1);
             }
-            cir.setReturnValue(ActionResult.success(this.world.isClient));
+            cir.setReturnValue(ActionResult.SUCCESS);
         }
     }
 

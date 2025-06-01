@@ -8,6 +8,7 @@ import net.minecraft.block.entity.TrappedChestBlockEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -19,6 +20,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import javax.swing.text.JTextComponent;
+import java.awt.*;
+
 @Mixin(BarrelBlock.class)
 public class BarrelBlockMixin {
     @Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
@@ -28,7 +32,7 @@ public class BarrelBlockMixin {
             String blockName = ((BarrelBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
             if ("幽匿催发体".equals(blockName) || "sculkcatalyst".equalsIgnoreCase(blockName)) {
                 if (world.isClient){
-                    player.sendMessage(Text.of("你不能打开幽匿催发体的物品栏界面"), true); // 在屏幕下方显示消息
+                    player.sendMessage(new LiteralText("你不能打开一个幽匿催发体的物品栏界面"));
                 }
                 cir.setReturnValue(ActionResult.SUCCESS);
             }

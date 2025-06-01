@@ -9,6 +9,7 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -29,7 +30,7 @@ public class ChestBlockMixin {
             String blockName = ((TrappedChestBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
             if ("声音抑制器".equals(blockName) || "SoundSuppressor".equalsIgnoreCase(blockName)) {
                 if (world.isClient){
-                    player.sendMessage(Text.of("你不能打开用于声音抑制的陷阱箱"), true); // 在屏幕下方显示消息
+                    player.sendMessage(new LiteralText("你不能打开一个声音抑制器的物品栏界面")); // 在屏幕下方显示消息
                 }
                 cir.setReturnValue(ActionResult.SUCCESS);
             }

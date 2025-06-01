@@ -4,7 +4,6 @@ import com.blue0666.carpetblueaddition.interfaces.onChangingPlayerEnderPearlList
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
 import net.minecraft.entity.thrown.ThrownEnderpearlEntity;
 import net.minecraft.item.EnderPearlItem;
 import net.minecraft.item.ItemStack;
@@ -20,7 +19,6 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.Set;
 
-//TODO
 @Mixin(EnderPearlItem.class)
 public class EnderPearlItemMixin {
 

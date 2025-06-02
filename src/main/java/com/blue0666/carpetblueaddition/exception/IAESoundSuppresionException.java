@@ -36,7 +36,7 @@ public class IAESoundSuppresionException extends IllegalArgumentException{
                 case START_DESTROY_BLOCK, ABORT_DESTROY_BLOCK, STOP_DESTROY_BLOCK -> builder.append("破坏方块");
                 case DROP_ALL_ITEMS, DROP_ITEM -> builder.append("丢弃物品");
                 case RELEASE_USE_ITEM -> builder.append("使用物品");
-                case SWAP_HELD_ITEMS -> builder.append("交换主副手物品");
+                case SWAP_ITEM_WITH_OFFHAND -> builder.append("交换主副手物品");
                 default -> throw new IllegalStateException();
             }
         } else if (packet instanceof PlayerInteractBlockC2SPacket) {
@@ -47,11 +47,8 @@ public class IAESoundSuppresionException extends IllegalArgumentException{
             builder.append("发送").append(packet.getClass().getSimpleName()).append("数据包");
         }
         BlockPos blockPos = this.triggerPos;
-        Identifier dimensionId = Registry.DIMENSION_TYPE.getId(player.getEntityWorld().getDimension().getType());
-        String dimensionName = dimensionId != null ? dimensionId.toString() : "unknown_dimension";
-
         String worldPos =
-                dimensionName + "[" +
+                (player.getEntityWorld()).getRegistryKey().getValue().toString() + "[" +
                         blockPos.getX() + " " +
                         blockPos.getY() + " " +
                         blockPos.getZ() + "]";

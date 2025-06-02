@@ -24,20 +24,21 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ChestBlockEntity.class)
 public abstract class ChestBlockEntityMixin extends LootableContainerBlockEntity implements onBlockStateChanged {
+    protected ChestBlockEntityMixin(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
+        super(blockEntityType, blockPos, blockState);
+    }
+
     @Shadow
     protected abstract Text getContainerName();
-
-    public ChestBlockEntityMixin(BlockEntityType<?> type) {
-        super(type);
-    }
 
     @Unique
     private static final int LISTENING_RADIUS = 8;//监听半径
     @Unique
     private int soundChannel=0;
 
-    @Inject(method = "tick", at = @At("HEAD"))
-    private void onTick(CallbackInfo ci) {
+
+    @Unique
+    public void updateSoundChannel(){
         if (CarpetBlueAdditionSettings.soundSuppressionIntroduce){
             if ((Object)this instanceof TrappedChestBlockEntity){
                 World world = this.getWorld();

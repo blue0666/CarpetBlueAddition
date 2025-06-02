@@ -3,6 +3,7 @@ package com.blue0666.carpetblueaddition;
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.utils.Translations;
+import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -38,7 +39,7 @@ public class CarpetBlueServer implements CarpetExtension {
 
     @Override
     public void onGameStarted() {
-        //CarpetServer.settingsManager.parseSettingsClass(CarpetBlueAdditionSettings.class);
+        CarpetServer.settingsManager.parseSettingsClass(CarpetBlueAdditionSettings.class);
     }
 
     @Override

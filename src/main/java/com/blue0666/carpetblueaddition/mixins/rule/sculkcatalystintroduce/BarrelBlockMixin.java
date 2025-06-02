@@ -32,7 +32,7 @@ public class BarrelBlockMixin {
             String blockName = ((BarrelBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
             if ("幽匿催发体".equals(blockName) || "sculkcatalyst".equalsIgnoreCase(blockName)) {
                 if (world.isClient){
-                    player.sendMessage(new LiteralText("你不能打开一个幽匿催发体的物品栏界面"));
+                    player.sendMessage(Text.of("你不能打开幽匿催发体的物品栏界面"), true);
                 }
                 cir.setReturnValue(ActionResult.SUCCESS);
             }

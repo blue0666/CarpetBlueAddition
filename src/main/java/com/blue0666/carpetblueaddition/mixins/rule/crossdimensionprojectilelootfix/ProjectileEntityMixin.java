@@ -32,7 +32,7 @@ public abstract class ProjectileEntityMixin extends Entity {
     private void injectGetOwner(CallbackInfoReturnable<Entity> cir) {
         // 如果缓存有效，直接返回
         if (CarpetBlueAdditionSettings.crossDimensionProjectileLootFix){
-            if (this.cachedOwner != null && !this.cachedOwner.removed) {
+            if (this.cachedOwner != null && !this.cachedOwner.isRemoved()) {
                 cir.setReturnValue(this.cachedOwner);
             }
 

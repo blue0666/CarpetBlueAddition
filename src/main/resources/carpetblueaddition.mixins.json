@@ -17,6 +17,7 @@
     "rule.newwitchdropIntroduce.LivingEntityMixin",
     "rule.sculkcatalystintroduce.BarrelBlockMixin",
     "rule.sculkcatalystintroduce.LivingEntityMixin",
+    "rule.soundsuppressionintroduce.AbstractBlockMixin",
     "rule.soundsuppressionintroduce.ArmorStandEntityMixin",
     "rule.soundsuppressionintroduce.BellBlockMixin",
     "rule.soundsuppressionintroduce.ChestBlockEntityMixin",

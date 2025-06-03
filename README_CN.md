@@ -8,4 +8,6 @@
 
 ### [规则一览](docs/Rules_CN.md)
 
+### [下载](https://modrinth.com/mod/carpet-blue-addition/versions)
+
 ### [联系作者](https://space.bilibili.com/525543707)

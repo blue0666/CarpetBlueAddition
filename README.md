@@ -8,4 +8,6 @@ A [carpet](https://github.com/gnembon/fabric-carpet) addition for SSFS server, i
 
 ### [Rule List](docs/Rules.md)
 
+### [Release Download](https://modrinth.com/mod/carpet-blue-addition/versions)
+
 ### [How to connect with me?](https://space.bilibili.com/525543707)

@@ -77,7 +77,7 @@ abstract public class ServerPlayerEntityMixin extends PlayerEntity implements on
             for (int i = 0; i < pearlsNbt.size(); i++) {
                 NbtCompound pearlTag = pearlsNbt.getCompound(i);
                 RegistryKey<World> world = World.CODEC.parse(NbtOps.INSTANCE, pearlTag.get("ender_pearl_dimension")).getOrThrow(false, msg -> { throw new RuntimeException(msg); });
-                ServerWorld serverWorld = ((ServerPlayerEntity)(Object)this).getServerWorld().getServer().getWorld(world);
+                ServerWorld serverWorld = ((ServerPlayerEntity)(Object)this).getEntityWorld().getServer().getWorld(world);
                 //从世界的未加载区块中尝试唤醒珍珠
                 if (serverWorld!=null){
                     Entity entity = EntityType.loadEntityWithPassengers(

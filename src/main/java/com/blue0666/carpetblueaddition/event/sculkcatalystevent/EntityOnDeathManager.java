@@ -19,7 +19,7 @@ public class EntityOnDeathManager {
                             .offset(Direction.EAST, x)
                             .offset(Direction.UP, y)
                             .offset(Direction.SOUTH, z);
-                    double distanceSquared = checkPos.getSquaredDistance(entityPos.getX(),entityPos.getY(),entityPos.getZ(),false);
+                    double distanceSquared = checkPos.getSquaredDistance(entityPos.getX(),entityPos.getY(),entityPos.getZ());
                     //需注意方块和实体的坐标总是偏移0.5格，所以这里的另一个平方距离算法会有偏差
                     if (distanceSquared <= radiusSquared) {
                         BlockEntity blockentity = world.getBlockEntity(checkPos);

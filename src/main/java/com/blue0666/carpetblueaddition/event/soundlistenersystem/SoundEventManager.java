@@ -28,7 +28,7 @@ public class SoundEventManager {
     }
 
     public static void handleEntitySound(Entity entity, int soundLevel) {
-        BlockPos interactPos = new BlockPos(entity.getX() + 0.5, entity.getY(), entity.getZ() + 0.5);
+        BlockPos interactPos = new BlockPos((int)(entity.getX() + 0.5), (int)entity.getY(), (int)(entity.getZ() + 0.5));
         World world = entity.getEntityWorld();
         Box searchArea = createBoxArea(interactPos, getListeningRadius());
 

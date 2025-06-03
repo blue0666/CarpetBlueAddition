@@ -34,7 +34,7 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
             int i2=ChunkSectionPos.getSectionCoord(MathHelper.floor(this.getPos().getX()));
             int j2=ChunkSectionPos.getSectionCoord(MathHelper.floor(this.getPos().getZ()));
             if ((i!=i2 ||j!=j2 ||--this.chunkTicketExpiryTicks<=0L) &&this.getOwner() instanceof ServerPlayerEntity){
-                handleChunkLoading(this.getEntityWorld(), new BlockPos(this.getPos()));
+                handleChunkLoading(this.getEntityWorld(), this.getBlockPos());
                 this.chunkTicketExpiryTicks=40L;
             }
             i=i2;j=j2;

@@ -1,6 +1,6 @@
 package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
 
-import com.blue0666.carpetblueaddition.exception.IAESoundSuppresionException;
+import com.blue0666.carpetblueaddition.exception.IAESoundSuppressionException;
 import com.blue0666.carpetblueaddition.interfaces.onBlockStateChanged;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.minecraft.block.BlockState;
@@ -17,9 +17,6 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 
 @Mixin(ChestBlockEntity.class)
@@ -61,10 +58,10 @@ public abstract class ChestBlockEntityMixin extends LootableContainerBlockEntity
 
     @Override
     @Unique
-    public void canReceiveSound(BlockPos interactPos, int soundLevel) throws IAESoundSuppresionException{
+    public void canReceiveSound(BlockPos interactPos, int soundLevel) throws IAESoundSuppressionException {
         String blockName = this.getBlockName();
         if (soundChannel == soundLevel&&("声音抑制器".equals(blockName) || "SoundSuppressor".equalsIgnoreCase(blockName))){
-            throw new IAESoundSuppresionException(interactPos, "声音抑制触发");
+            throw new IAESoundSuppressionException(interactPos, "声音抑制触发");
         }
     }
 }

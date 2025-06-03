@@ -1,25 +1,20 @@
 package com.blue0666.carpetblueaddition.settings;
 
-import carpet.settings.ParsedRule;
+import carpet.CarpetSettings;
+import carpet.api.settings.CarpetRule;
 import carpet.settings.Rule;
-import carpet.settings.Validator;
+import carpet.api.settings.Validator;
+import com.blue0666.carpetblueaddition.CarpetBlue;
+import com.blue0666.carpetblueaddition.CarpetBlueServer;
+import com.mojang.datafixers.TypeRewriteRule;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
+import org.jetbrains.annotations.Nullable;
 
+import static carpet.api.settings.RuleCategory.*;
 public class CarpetBlueAdditionSettings {
 
     public static final String BLUE = "BLUE";
 
-    @Rule(
-            desc ="Change the resistance of cobweb into powdersnowblock",
-            category = {BLUE, "feature"})
-    public static boolean cobwebResistanceTuner;
-    @Rule(
-            desc = "Fix Player owned projectiles lose their player ownership when exiting portals like 23w41a",
-            category = {BLUE,"bugfix","survival"}
-    )
-    public static boolean crossDimensionProjectileLootFix;
     @Rule(
             desc="Introduce the new explosion feature that Damagesource touching water will not hurt BlockLikeEntities",
             category = {BLUE,"feature","tnt"}
@@ -39,17 +34,12 @@ public class CarpetBlueAdditionSettings {
     )
     public static int soundSuppressionRadius=16;
     private static class soundSuppressionMaxRadiusValue extends Validator<Integer> {
-        @Override public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue, String string) {
-            return (newValue > 0 && newValue <= 64) ? newValue : null;
+        @Override public Integer validate(ServerCommandSource source, CarpetRule<Integer> currentRule, Integer newValue, String string) {
+            return newValue > 0 && newValue <= 64 ? newValue : null;
         }
         @Override
         public String description() { return "You must choose a value from 1 to 64";}
     }
-    @Rule(
-            desc="Introduce the Sculk Catalyst Block from 1.19, only deleting experience orbs but wont spread sculk or update neighbour",
-            category = {BLUE,"feature"}
-    )
-    public static boolean sculkCatalystIntroduce;
     @Rule(
             desc="Make crying-obsidian easy to mine",
             category={BLUE,"feature","client"}
@@ -74,11 +64,11 @@ public class CarpetBlueAdditionSettings {
     public static boolean enderpearlDiagonalChunkLoader;
     @Rule(
             desc="Now when player login in, all the pearls thrown by him will automatically be called and load chunks for 40 ticks, "+
-                     "can work together will other loading system to permanently load chunks",
+                    "can work together will other loading system to permanently load chunks",
             category={BLUE,"feature"}
     )
     public static boolean enderpearlChunkLoaderOnPlayerLogin;
-//    @Rule(
+    //    @Rule(
 //            desc="Boats can be leashed by leads",
 //            category={BLUE,"feature"}
 //    )
@@ -89,4 +79,8 @@ public class CarpetBlueAdditionSettings {
     )
     public static boolean leashableVillager;
 
+    public static void onWorldLoadingStarted (){
+        CarpetBlue.LOGGER.info("Carpet Blue Addition started.");
+    }
 }
+

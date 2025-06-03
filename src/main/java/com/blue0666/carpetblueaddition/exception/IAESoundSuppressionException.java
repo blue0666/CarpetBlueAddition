@@ -1,19 +1,16 @@
 package com.blue0666.carpetblueaddition.exception;
 
 import com.blue0666.carpetblueaddition.CarpetBlue;
-import net.minecraft.network.Packet;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.network.listener.ServerPlayPacketListener;
 import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerInteractBlockC2SPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.World;
 
-public class IAESoundSuppresionException extends IllegalArgumentException{
+public class IAESoundSuppressionException extends IllegalArgumentException{
     private final BlockPos triggerPos;
-    public IAESoundSuppresionException(BlockPos blockPos, String message) {
+    public IAESoundSuppressionException(BlockPos blockPos, String message) {
         super(message);
         this.triggerPos = blockPos;
     }

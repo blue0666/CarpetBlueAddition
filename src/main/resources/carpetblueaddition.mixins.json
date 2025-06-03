@@ -5,8 +5,6 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "rule.NetworkUtilsThreadMixin",
-    "rule.cobwebresistancetuner.CobwebBlockMixin",
-    "rule.crossdimensionprojectilelootfix.ProjectileEntityMixin",
     "rule.enderpearlchunkloader.EnderPearlEntityMixin",
     "rule.enderpearlchunkloaderonplayerlogin.EnderPearlItemMixin",
     "rule.enderpearlchunkloaderonplayerlogin.EntityMixin",
@@ -15,8 +13,6 @@
     "rule.kexplosionintroduce.ExplosionMixin",
     "rule.leashablevillager.MerchantEntityMixin",
     "rule.newwitchdropIntroduce.LivingEntityMixin",
-    "rule.sculkcatalystintroduce.BarrelBlockMixin",
-    "rule.sculkcatalystintroduce.LivingEntityMixin",
     "rule.softcryingobsidian.AbstractBlockMixin",
     "rule.softcryingobsidian.AbstractBlockStateInvoker",
     "rule.soundsuppressionintroduce.AbstractBlockMixin",

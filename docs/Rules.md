@@ -61,14 +61,15 @@ Tips:Only safe channels are transplanted, other channels are not in cosideration
 * Categories: `BLUE` , `feature`
 
 
-| Channel | Function                                          |
-| :-----: | ------------------------------------------------- |
-|    5    | Shadow Items interacting with armor stand        |
-|    9    | suppress when door/trapdoor close                 |
-|   10   | suppress when door/trapdoor open                  |
-|   10   | TNT block not deleted on fused(TNT looting duper) |
-|   10   | suppress when noteblock play                      |
-|   11   | suppress when bell rings                          |
+| Channel | Function                                                                 |
+| :-----: | ------------------------------------------------------------------------ |
+|    4    | Shadow Items interacting with armor stand(Item PutUp/Anything TakeDown) |
+|    5    | Shadow Items interacting with armor stand(Armor PutUp)                  |
+|    9    | suppress when door/trapdoor close                                        |
+|   10   | suppress when door/trapdoor open                                         |
+|   10   | TNT block not deleted on fused(TNT looting duper)                        |
+|   10   | suppress when noteblock play                                             |
+|   11   | suppress when bell rings                                                 |
 
 #### SoundSuppressionRadius
 

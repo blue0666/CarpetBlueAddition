@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
+package com.blue0666.carpetblueaddition.mixins.rule.simplesoundsuppression;
 
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEvent;
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEventManager;
@@ -23,7 +23,7 @@ public abstract class TrapdoorBlockMixin {
 
     @Inject(method = "playToggleSound", at = @At("TAIL"))
     private void emitSoundEvent(@Nullable PlayerEntity player, World world, BlockPos pos, boolean open, CallbackInfo ci) {
-        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce){
+        if (CarpetBlueAdditionSettings.simpleSoundSuppression){
             if (!world.isClient()) {
                 if (open) {
                     // 模拟门被打开

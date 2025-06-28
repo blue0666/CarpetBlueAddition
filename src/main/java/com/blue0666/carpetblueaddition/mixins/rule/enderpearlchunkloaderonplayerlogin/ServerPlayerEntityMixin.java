@@ -59,7 +59,7 @@ abstract public class ServerPlayerEntityMixin extends PlayerEntity implements on
                 else{
                     NbtCompound pearlTag = new NbtCompound();
                     pearl.saveNbt(pearlTag);
-                    NbtElement worldNbt = World.CODEC.encodeStart(NbtOps.INSTANCE, pearl.world.getRegistryKey()).getOrThrow(false, msg -> { throw new RuntimeException(msg); });
+                    NbtElement worldNbt = World.CODEC.encodeStart(NbtOps.INSTANCE, pearl.getWorld().getRegistryKey()).getOrThrow(false, msg -> { throw new RuntimeException(msg); });
                     pearlTag.put("ender_pearl_dimension", worldNbt);
                     pearlsNbt.add(pearlTag);
                 }

@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
+package com.blue0666.carpetblueaddition.mixins.rule.simplesoundsuppression;
 
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEvent;
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEventManager;
@@ -17,7 +17,7 @@ public class TNTBlockMixin {
     @Inject(method="primeTnt(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/LivingEntity;)V",
             at = @At(value="RETURN"))
     private static void primeTnt(World world, BlockPos pos, LivingEntity igniter, CallbackInfo ci){
-        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce){
+        if (CarpetBlueAdditionSettings.simpleSoundSuppression){
             SoundEventManager.handleBlockSound(world, pos, SoundEvent.TNT_FUSE);
         }
     }

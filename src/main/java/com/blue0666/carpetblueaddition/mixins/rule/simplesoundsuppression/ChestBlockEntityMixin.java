@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
+package com.blue0666.carpetblueaddition.mixins.rule.simplesoundsuppression;
 
 import com.blue0666.carpetblueaddition.exception.IAESoundSuppressionException;
 import com.blue0666.carpetblueaddition.interfaces.onBlockStateChanged;
@@ -36,7 +36,7 @@ public abstract class ChestBlockEntityMixin extends LootableContainerBlockEntity
 
     @Unique
     public void updateSoundChannel(){
-        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce){
+        if (CarpetBlueAdditionSettings.simpleSoundSuppression){
             if ((Object)this instanceof TrappedChestBlockEntity){
                 World world = this.getWorld();
                 if (world != null && !world.isClient()) {

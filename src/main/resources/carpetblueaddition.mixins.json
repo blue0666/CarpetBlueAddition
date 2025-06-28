@@ -13,17 +13,15 @@
     "rule.kexplosionintroduce.ExplosionMixin",
     "rule.leashablevillager.MerchantEntityMixin",
     "rule.newwitchdropIntroduce.LivingEntityMixin",
-    "rule.softcryingobsidian.AbstractBlockMixin",
-    "rule.softcryingobsidian.AbstractBlockStateInvoker",
-    "rule.soundsuppressionintroduce.AbstractBlockMixin",
-    "rule.soundsuppressionintroduce.ArmorStandEntityMixin",
-    "rule.soundsuppressionintroduce.BellBlockMixin",
-    "rule.soundsuppressionintroduce.ChestBlockEntityMixin",
-    "rule.soundsuppressionintroduce.ChestBlockMixin",
-    "rule.soundsuppressionintroduce.DoorBlockMixin",
-    "rule.soundsuppressionintroduce.NoteBlockMixin",
-    "rule.soundsuppressionintroduce.TNTBlockMixin",
-    "rule.soundsuppressionintroduce.TrapdoorBlockMixin"
+    "rule.simplesoundsuppression.AbstractBlockMixin",
+    "rule.simplesoundsuppression.ArmorStandEntityMixin",
+    "rule.simplesoundsuppression.BellBlockMixin",
+    "rule.simplesoundsuppression.ChestBlockEntityMixin",
+    "rule.simplesoundsuppression.ChestBlockMixin",
+    "rule.simplesoundsuppression.DoorBlockMixin",
+    "rule.simplesoundsuppression.NoteBlockMixin",
+    "rule.simplesoundsuppression.TNTBlockMixin",
+    "rule.simplesoundsuppression.TrapdoorBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

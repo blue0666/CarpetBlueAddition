@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
+package com.blue0666.carpetblueaddition.mixins.rule.simplesoundsuppression;
 
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEvent;
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEventManager;
@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class NoteBlockMixin {
     @Inject(method = "playNote", at = @At("TAIL"))
     private void emitSoundEvent(Entity entity, BlockState state, World world, BlockPos pos, CallbackInfo ci){
-        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce){
+        if (CarpetBlueAdditionSettings.simpleSoundSuppression){
             if (!world.isClient()) {
                 SoundEventManager.handleBlockSound(world, pos, SoundEvent.NOTEBLOCK_PLAYSOUND);
             }

@@ -1,8 +1,7 @@
-package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
+package com.blue0666.carpetblueaddition.mixins.rule.simplesoundsuppression;
 
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.minecraft.block.AbstractChestBlock;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
 import net.minecraft.block.entity.BlockEntityType;
@@ -31,7 +30,7 @@ abstract public class ChestBlockMixin extends AbstractChestBlock<ChestBlockEntit
     @Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
     private void onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
         // 提示玩家不能打开用于更新抑制的陷阱箱
-        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce && world.getBlockEntity(pos) instanceof TrappedChestBlockEntity) {
+        if (CarpetBlueAdditionSettings.simpleSoundSuppression && world.getBlockEntity(pos) instanceof TrappedChestBlockEntity) {
             String blockName = ((TrappedChestBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
             if ("声音抑制器".equals(blockName) || "SoundSuppressor".equalsIgnoreCase(blockName)) {
                 if (world.isClient){

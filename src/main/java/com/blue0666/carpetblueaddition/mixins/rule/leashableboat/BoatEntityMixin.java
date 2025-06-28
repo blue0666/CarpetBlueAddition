@@ -43,7 +43,7 @@ public abstract class BoatEntityMixin extends Entity implements onLeashingBoat {
 
     @Unique
     public void attachLeash(Entity entity, boolean broadcastPacket) {
-        if (!this.world.isClient) {
+        if (!this.getWorld().isClient) {
             if (this.holdingEntity != null) {
                 this.detachLeash(true, true);
             }
@@ -59,7 +59,7 @@ public abstract class BoatEntityMixin extends Entity implements onLeashingBoat {
     @Unique
     public void detachLeash(boolean dropLead, boolean sendPacket) {
         if (this.holdingEntity != null) {
-            if (!this.world.isClient && dropLead) {
+            if (!this.getWorld().isClient && dropLead) {
                 this.dropItem(Items.LEAD);
             }
 
@@ -78,7 +78,7 @@ public abstract class BoatEntityMixin extends Entity implements onLeashingBoat {
 
     @Unique
     private void sendLeashPacket(Entity entity) {
-        if (this.world instanceof ServerWorld serverWorld) {
+        if (this.getWorld() instanceof ServerWorld serverWorld) {
             serverWorld.getChunkManager().sendToOtherNearbyPlayers((Entity)this, new EntityAttachS2CPacket(((Entity)this), this.holdingEntity));
         }
     }
@@ -92,7 +92,7 @@ public abstract class BoatEntityMixin extends Entity implements onLeashingBoat {
         ItemStack stack = player.getStackInHand(hand);
 
         if (stack.getItem() == Items.LEAD && this.canBeLeashedBy(player)) {
-            if (!this.world.isClient) {
+            if (!this.getWorld().isClient) {
                 this.attachLeash(player, true);
                 stack.decrement(1);
             }
@@ -105,15 +105,15 @@ public abstract class BoatEntityMixin extends Entity implements onLeashingBoat {
     @Override
     public void setHoldingEntityId(int id) {
         this.holdingEntityId = id;
-        Entity entity = this.world.getEntityById(id);
+        Entity entity = this.getWorld().getEntityById(id);
         this.attachLeash(entity,false);
     }
 
     @Unique
     @Nullable
     public Entity getHoldingEntity() {
-        if (this.holdingEntity == null && this.holdingEntityId != 0 && this.world.isClient) {
-            this.holdingEntity = this.world.getEntityById(this.holdingEntityId);
+        if (this.holdingEntity == null && this.holdingEntityId != 0 && this.getWorld().isClient) {
+            this.holdingEntity = this.getWorld().getEntityById(this.holdingEntityId);
         }
 
         return this.holdingEntity;

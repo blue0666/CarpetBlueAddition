@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
+package com.blue0666.carpetblueaddition.mixins.rule.simplesoundsuppression;
 
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEvent;
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEventManager;
@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ArmorStandEntityMixin {
     @Inject(method = "equipStack", at = @At(value="RETURN"))
     public void emitSoundEvent(EquipmentSlot slot, ItemStack stack, CallbackInfo ci){
-        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce){
+        if (CarpetBlueAdditionSettings.simpleSoundSuppression){
             Item item = stack.getItem();
             SoundEventManager.handleEntitySound((Entity)(Object)this, (item instanceof ArmorItem ? SoundEvent.ARMOR_EQUIP:SoundEvent.ARMOR_OTHER));
         }

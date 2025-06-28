@@ -1,16 +1,11 @@
 package com.blue0666.carpetblueaddition.settings;
 
-import carpet.CarpetSettings;
 import carpet.api.settings.CarpetRule;
 import carpet.settings.Rule;
 import carpet.api.settings.Validator;
 import com.blue0666.carpetblueaddition.CarpetBlue;
-import com.blue0666.carpetblueaddition.CarpetBlueServer;
-import com.mojang.datafixers.TypeRewriteRule;
 import net.minecraft.server.command.ServerCommandSource;
-import org.jetbrains.annotations.Nullable;
 
-import static carpet.api.settings.RuleCategory.*;
 public class CarpetBlueAdditionSettings {
 
     public static final String BLUE = "BLUE";
@@ -24,27 +19,22 @@ public class CarpetBlueAdditionSettings {
             desc="Introduce the SoundSuppresion from 1.20-1.21",
             category = {BLUE,"feature"}
     )
-    public static boolean soundSuppressionIntroduce;
+    public static boolean simpleSoundSuppression;
     @Rule(
             desc="Control the suppressing detector's radius, max value 64",
             category = {BLUE,"feature"},
-            options = {"8","16","32","64"},
+            options = {"8","16","32","64","128"},
             strict = false,
             validate = soundSuppressionMaxRadiusValue.class
     )
     public static int soundSuppressionRadius=16;
     private static class soundSuppressionMaxRadiusValue extends Validator<Integer> {
         @Override public Integer validate(ServerCommandSource source, CarpetRule<Integer> currentRule, Integer newValue, String string) {
-            return newValue > 0 && newValue <= 64 ? newValue : null;
+            return newValue > 0 && newValue <= 128 ? newValue : null;
         }
         @Override
         public String description() { return "You must choose a value from 1 to 64";}
     }
-    @Rule(
-            desc="Make crying-obsidian easy to mine",
-            category={BLUE,"feature","client"}
-    )
-    public static boolean softCryingObsidian;
     @Rule(
             desc="Introduce the new witch drop in 1.21+",
             category={BLUE,"feature"}

@@ -6,13 +6,18 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.WitchEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.context.LootContextTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,9 +28,11 @@ public abstract class LivingEntityMixin extends Entity {
     public LivingEntityMixin(EntityType<?> type, World world) {
         super(type, world);
     }
-    @Invoker("getLootContextBuilder")
-    protected abstract LootContext.Builder invokeGetLootContextBuilder(boolean causedByPlayer, DamageSource source);
+    @Shadow
+    protected PlayerEntity attackingPlayer;
 
+    @Shadow
+    abstract public long getLootTableSeed();
 
     @Inject(
             method = "dropLoot",
@@ -33,18 +40,25 @@ public abstract class LivingEntityMixin extends Entity {
                     value = "INVOKE",
                     target = "Lnet/minecraft/entity/LivingEntity;getLootTable()Lnet/minecraft/util/Identifier;",
                     shift = At.Shift.BEFORE
-            ),
-            cancellable = true
+            )
     )
-    private void injectDropLoot(DamageSource source, boolean causedByPlayer, CallbackInfo ci) {
+    private void injectDropLoot(DamageSource damageSource, boolean causedByPlayer, CallbackInfo ci) {
         if (CarpetBlueAdditionSettings.newWitchDropIntroduce) {
             if ((LivingEntity)((Object) this) instanceof WitchEntity) {
-                // 替换为数据驱动的自定义掉落表
                 Identifier customLootTable = new Identifier("custom_loot", "entities/witch");
-                LootTable lootTable = ((LivingEntity)(Object) this).world.getServer().getLootManager().getTable(customLootTable);
-                LootContext.Builder builder = this.invokeGetLootContextBuilder(causedByPlayer, source);
-                lootTable.generateLoot(builder.build(LootContextTypes.ENTITY), stack -> ((LivingEntity) (Object) this).dropStack(stack));
-                ci.cancel();
+                LootTable lootTable = ((LivingEntity)(Object) this).getWorld().getServer().getLootManager().getLootTable(customLootTable);
+
+                LootContextParameterSet.Builder builder = (new LootContextParameterSet.Builder((ServerWorld)this.getWorld())).add(LootContextParameters.THIS_ENTITY, this).add(LootContextParameters.ORIGIN, this.getPos()).add(LootContextParameters.DAMAGE_SOURCE, damageSource).addOptional(LootContextParameters.KILLER_ENTITY, damageSource.getAttacker()).addOptional(LootContextParameters.DIRECT_KILLER_ENTITY, damageSource.getSource());
+                if (causedByPlayer && this.attackingPlayer != null) {
+                    builder = builder.add(LootContextParameters.LAST_DAMAGE_PLAYER, this.attackingPlayer).luck(this.attackingPlayer.getLuck());
+                }
+
+                LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
+                lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
+
+//                LootContext.Builder builder = this.invokeGetLootContextBuilder(causedByPlayer, source);
+//                lootTable.generateLoot(builder.build(LootContextTypes.ENTITY), stack -> ((LivingEntity) (Object) this).dropStack(stack));
+//                ci.cancel();
             }
         }
     }

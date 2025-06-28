@@ -1,4 +1,4 @@
-package com.blue0666.carpetblueaddition.mixins.rule.soundsuppressionintroduce;
+package com.blue0666.carpetblueaddition.mixins.rule.simplesoundsuppression;
 
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEvent;
 import com.blue0666.carpetblueaddition.event.soundlistenersystem.SoundEventManager;
@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BellBlockMixin {
     @Inject(method = "ring(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/Direction;)Z", at = @At(value="RETURN"))
     private void emitSoundEvent(World world, BlockPos pos, @Nullable Direction direction, CallbackInfoReturnable<Boolean> cir){
-        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce) {
+        if (CarpetBlueAdditionSettings.simpleSoundSuppression) {
             if (cir.getReturnValue()) {
                 if (!world.isClient()) {
                     SoundEventManager.handleBlockSound(world, pos, SoundEvent.BELL_RING);

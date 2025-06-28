@@ -10,8 +10,8 @@
   "rule.kExplosionIntroduce.name": "K爆TNT移植",
   "rule.kExplosionIntroduce.desc": "移植1.21.2+K爆特性，由team_109发现",
 
-  "rule.soundSuppressionIntroduce.name": "声音抑制移植",
-  "rule.soundSuppressionIntroduce.desc": "移植1.20-1.21的声音抑制器，将陷阱箱命名为声音抑制器并正确摆放即可使用，备注：开启功能后需要更新一下声音一直器让其刷新状态",
+  "rule.simpleSoundSuppression.name": "声音抑制移植",
+  "rule.simpleSoundSuppression.desc": "一个更简便，可控的声音抑制器效果模拟，备注：开启功能后需要更新一下声音抑制器让其刷新一次状态",
 
 
   "rule.soundSuppressionRadius.name": "声音抑制器范围控制",

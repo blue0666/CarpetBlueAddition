@@ -1,6 +1,7 @@
 package com.blue0666.carpetblueaddition.event.soundlistenersystem;
 
 public class SoundEvent {
+    public static final int ARMOR_OTHER = 4;
     public static final int ARMOR_EQUIP = 5;
     public static final int DOOR_CLOSE = 9;
     public static final int DOOR_OPEN = 10;

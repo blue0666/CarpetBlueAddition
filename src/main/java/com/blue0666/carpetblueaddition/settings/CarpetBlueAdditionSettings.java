@@ -28,14 +28,14 @@ public class CarpetBlueAdditionSettings {
     @Rule(
             desc="Control the suppressing detector's radius, max value 64",
             category = {BLUE,"feature"},
-            options = {"8","16","32","64"},
+            options = {"8","16","32","64","128"},
             strict = false,
             validate = soundSuppressionMaxRadiusValue.class
     )
     public static int soundSuppressionRadius=16;
     private static class soundSuppressionMaxRadiusValue extends Validator<Integer> {
         @Override public Integer validate(ServerCommandSource source, CarpetRule<Integer> currentRule, Integer newValue, String string) {
-            return newValue > 0 && newValue <= 64 ? newValue : null;
+            return newValue > 0 && newValue <= 128 ? newValue : null;
         }
         @Override
         public String description() { return "You must choose a value from 1 to 64";}

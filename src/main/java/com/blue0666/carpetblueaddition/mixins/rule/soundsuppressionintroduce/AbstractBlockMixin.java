@@ -6,6 +6,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.TrappedChestBlockEntity;
 import net.minecraft.server.network.DebugInfoSender;
 import net.minecraft.util.math.BlockPos;
@@ -20,9 +21,9 @@ public class AbstractBlockMixin {
     @Inject(method = "neighborUpdate", at = @At("RETURN"), cancellable = true)
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify, CallbackInfo ci) {
         //更新用于声音抑制的陷阱箱方块的监听频道
-        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce && world.getBlockEntity(pos) instanceof TrappedChestBlockEntity){
-            BlockEntity trappedchestblockEntity = world.getBlockEntity(pos);
-            ((onBlockStateChanged)trappedchestblockEntity).updateSoundChannel();
+        if (CarpetBlueAdditionSettings.soundSuppressionIntroduce && world.getBlockEntity(pos) instanceof ChestBlockEntity){
+            BlockEntity chestblockEntity = world.getBlockEntity(pos);
+            ((onBlockStateChanged)chestblockEntity).updateSoundChannel();
         }
     }
 }

@@ -6,7 +6,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ChestBlockEntity;
-import net.minecraft.block.entity.TrappedChestBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -30,8 +29,8 @@ abstract public class ChestBlockMixin extends AbstractChestBlock<ChestBlockEntit
     @Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
     private void onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
         // 提示玩家不能打开用于更新抑制的陷阱箱
-        if (CarpetBlueAdditionSettings.simpleSoundSuppression && world.getBlockEntity(pos) instanceof TrappedChestBlockEntity) {
-            String blockName = ((TrappedChestBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
+        if (CarpetBlueAdditionSettings.simpleSoundSuppression && world.getBlockEntity(pos) instanceof ChestBlockEntity) {
+            String blockName = ((ChestBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();
             if ("声音抑制器".equals(blockName) || "SoundSuppressor".equalsIgnoreCase(blockName)) {
                 if (world.isClient){
                     player.sendMessage(Text.of("你不能打开用于声音抑制的陷阱箱"), true);

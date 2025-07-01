@@ -37,7 +37,7 @@ public abstract class ChestBlockEntityMixin extends LootableContainerBlockEntity
     @Unique
     public void updateSoundChannel(){
         if (CarpetBlueAdditionSettings.soundSuppressionIntroduce){
-            if ((Object)this instanceof TrappedChestBlockEntity){
+            if ((Object)this instanceof ChestBlockEntity){
                 World world = this.getWorld();
                 if (world != null && !world.isClient()) {
                     // 获取陷阱箱背部的红石信号强度
@@ -59,6 +59,7 @@ public abstract class ChestBlockEntityMixin extends LootableContainerBlockEntity
     @Override
     @Unique
     public void canReceiveSound(BlockPos interactPos, int soundLevel) throws IAESoundSuppressionException {
+        this.updateSoundChannel();
         String blockName = this.getBlockName();
         if (soundChannel == soundLevel&&("声音抑制器".equals(blockName) || "SoundSuppressor".equalsIgnoreCase(blockName))){
             throw new IAESoundSuppressionException(interactPos, "声音抑制触发");

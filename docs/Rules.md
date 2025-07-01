@@ -49,7 +49,7 @@ In detail, this rule will make those entities immune from TNTEntity explosion(wh
 
 Introduce the sound suppressor of a calibrated sculk sensor in 1.20-1.21
 
-Place a trappedChest and name it "SoundSuppresor" or "声音抑制器" and put a lectern at its back with 15 pages, then use the specific channels as you want.
+Place a Chest or TrappedChest and name it "SoundSuppresor" or "声音抑制器" and put a lectern at its back with 15 pages, then use the specific channels as you want.
 
 Tips:Only safe channels are transplanted, other channels are not in cosideration yet.
 
@@ -61,22 +61,21 @@ Tips:Only safe channels are transplanted, other channels are not in cosideration
 * Categories: `BLUE` , `feature`
 
 
-| Channel | Function                                                                 |
-| :-----: | ------------------------------------------------------------------------ |
-|    4    | Shadow Items interacting with armor stand(Item PutUp/Anything TakeDown) |
-|    5    | Shadow Items interacting with armor stand(Armor PutUp)                  |
-|    9    | suppress when door/trapdoor close                                        |
-|   10   | suppress when door/trapdoor open                                         |
-|   10   | TNT block not deleted on fused(TNT looting duper)                        |
-|   10   | suppress when noteblock play                                             |
-|   11   | suppress when bell rings                                                 |
+| Channel | Function                                                          |
+| :-----: | ----------------------------------------------------------------- |
+|    5    | Universal Shadow Items interacting with armor stand(Armor PutUp) |
+|    9    | suppress when door/trapdoor close                                 |
+|   10   | suppress when door/trapdoor open                                  |
+|   10   | TNT block not deleted on fused(TNT looting duper)                 |
+|   10   | suppress when noteblock play                                      |
+|   11   | suppress when bell rings                                          |
 
 #### SoundSuppressionRadius
 
 Customize your suppressor's listening radius
 
 * Default Value: `false`
-* Optional Parameters: `8`, `16`, `32`, `64`
+* Optional Parameters: `8`, `16`, `32`, `64`, `128`
 * Open Method: `/carpet soundSuppressionRadius (int)`
 * Categories: `BLUE` , `feature`
 

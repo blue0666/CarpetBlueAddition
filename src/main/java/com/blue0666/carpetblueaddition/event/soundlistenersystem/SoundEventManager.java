@@ -3,6 +3,7 @@ package com.blue0666.carpetblueaddition.event.soundlistenersystem;
 import com.blue0666.carpetblueaddition.interfaces.onBlockStateChanged;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.TrappedChestBlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
@@ -21,7 +22,7 @@ public class SoundEventManager {
 
         BlockPos.stream(searchArea).forEach(pos -> {
             BlockEntity entity = world.getBlockEntity(pos);
-            if (entity instanceof TrappedChestBlockEntity) {
+            if (entity instanceof ChestBlockEntity) {
                 ((onBlockStateChanged) entity).canReceiveSound(interactPos, soundLevel);
             }
         });
@@ -34,7 +35,7 @@ public class SoundEventManager {
 
         BlockPos.stream(searchArea).forEach(pos -> {
             BlockEntity blockentity = world.getBlockEntity(pos);
-            if (blockentity instanceof TrappedChestBlockEntity) {
+            if (blockentity instanceof ChestBlockEntity) {
                 ((onBlockStateChanged) blockentity).canReceiveSound(blockPos, soundLevel);
             }
         });

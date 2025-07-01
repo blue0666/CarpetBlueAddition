@@ -39,7 +39,7 @@ public abstract class ChestBlockEntityMixin extends LootableContainerBlockEntity
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
         if (CarpetBlueAdditionSettings.soundSuppressionIntroduce){
-            if ((Object)this instanceof TrappedChestBlockEntity){
+            if ((Object)this instanceof ChestBlockEntity){
                 World world = this.getWorld();
                 if (world != null && !world.isClient()) {
                     // 获取陷阱箱背部的红石信号强度

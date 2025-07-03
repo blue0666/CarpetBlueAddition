@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(NoteBlock.class)
 public class NoteBlockMixin {
     @Inject(method = "playNote", at = @At("TAIL"))
-    private void emitSoundEvent(Entity entity, BlockState state, World world, BlockPos pos, CallbackInfo ci){
+    private void emitSoundEvent(Entity entity, World world, BlockPos pos, CallbackInfo ci){
         if (CarpetBlueAdditionSettings.soundSuppressionIntroduce){
             if (!world.isClient()) {
                 SoundEventManager.handleBlockSound(world, pos, SoundEvent.NOTEBLOCK_PLAYSOUND);

@@ -1,7 +1,7 @@
 package com.blue0666.carpetblueaddition.exception;
 
 import com.blue0666.carpetblueaddition.CarpetBlue;
-import net.minecraft.network.packet.Packet;
+import net.minecraft.network.Packet;
 import net.minecraft.network.listener.ServerPlayPacketListener;
 import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerInteractBlockC2SPacket;

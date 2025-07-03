@@ -4,7 +4,7 @@ import com.blue0666.carpetblueaddition.exception.IAESoundSuppressionException;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.network.NetworkThreadUtils;
-import net.minecraft.network.packet.Packet;
+import net.minecraft.network.Packet;
 import net.minecraft.network.listener.PacketListener;
 import net.minecraft.network.listener.ServerPlayPacketListener;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public class NetworkUtilsThreadMixin {
     @SuppressWarnings({"MixinExtrasOperationParameters", "unchecked"})
     @WrapOperation(method = "method_11072", at = @At(value = "INVOKE",
-                    target = "Lnet/minecraft/network/packet/Packet;apply(Lnet/minecraft/network/listener/PacketListener;)V"
+                    target = "Lnet/minecraft/network/Packet;apply(Lnet/minecraft/network/listener/PacketListener;)V"
             )
     )
     private static <T extends PacketListener> void exceptionReason(Packet packet, T listener, Operation<Void> original) {

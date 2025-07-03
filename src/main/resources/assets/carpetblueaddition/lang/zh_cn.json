@@ -11,11 +11,11 @@
   "rule.kExplosionIntroduce.desc": "移植1.21.2+K爆特性，由team_109发现",
 
   "rule.simpleSoundSuppression.name": "声音抑制移植",
-  "rule.simpleSoundSuppression.desc": "一个更简便，可控的声音抑制器效果模拟，备注：开启功能后需要更新一下声音抑制器让其刷新一次状态",
+  "rule.simpleSoundSuppression.desc": "一个更简便，可控的声音抑制器效果模拟，备注，和原版的声音抑制是完全分离的实现，为了代码兼容低版本",
 
 
   "rule.soundSuppressionRadius.name": "声音抑制器范围控制",
-  "rule.soundSuppressionRadius.desc": "控制声音抑制器的监听范围半径，可输入一个正整数，原版默认为17格，为了卡顿和性能考虑，最大不能超过64",
+  "rule.soundSuppressionRadius.desc": "控制声音抑制器的监听范围半径（是本mod的而非原版的），可输入一个正整数，原版默认为17格，为了卡顿和性能考虑，最大不能超过128",
 
   "rule.sculkCatalystIntroduce.name": "幽匿催发体移植",
   "rule.sculkCatalystIntroduce.desc": "移植幽匿催发体，将木桶命名为幽匿催发体即可阻止范围内经验生成",

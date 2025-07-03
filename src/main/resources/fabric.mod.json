@@ -25,7 +25,7 @@
   "depends": {
     "fabricloader": "*",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": ">=1.20.3"
   },
   "accessWidener": "blue.accesswidener"
 }

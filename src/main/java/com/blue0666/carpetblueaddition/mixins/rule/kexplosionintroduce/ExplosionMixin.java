@@ -21,10 +21,10 @@ public class ExplosionMixin{
             method = "collectBlocksAndDamageEntities",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/Entity;isImmuneToExplosion()Z"
+                    target = "Lnet/minecraft/entity/Entity;isImmuneToExplosion(Lnet/minecraft/world/explosion/Explosion;)Z"
             )
     )
-    public boolean isImmuneToExplosionMixin(Entity instance, @Local Entity entity){
+    public boolean isImmuneToExplosionMixin(Entity instance, Explosion explosion, @Local Entity entity){
         if (CarpetBlueAdditionSettings.kExplosionIntroduce) {
             boolean b1 = this.entity.isTouchingWater(), b2 = false;
             if (entity.getType() == EntityType.ARMOR_STAND ||
@@ -34,6 +34,6 @@ public class ExplosionMixin{
             }
             return b1 && b2;
         }
-        return entity.isImmuneToExplosion();
+        return entity.isImmuneToExplosion(explosion);
     }
 }

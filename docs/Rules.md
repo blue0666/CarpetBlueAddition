@@ -12,7 +12,7 @@ Change the Resistance parameter of **CobwebBlock** into **Powdersnow block**, ea
 
 * Default Value: `false`
 * Optional Parameters: `true`, `false`
-* Open Method: `/carpet cobWebResistanceTuner ture`
+* Open Method: `/carpet cobWebResistanceTuner true`
 * Categories: `BLUE` , `feature`
 
 ### CrossDimensionProjectileLootFix
@@ -27,12 +27,12 @@ Tips:Mojang fixed it in 23w41a.Therefore, 1.19.3+ never need this rule. Besides,
 
 * Default Value: `false`
 * Optional Parameters: `true`, `false`
-* Open Method: `/carpet crossDimensionProjectileLootFix ture`
+* Open Method: `/carpet crossDimensionProjectileLootFix true`
 * Categories: `BLUE` , `survival`, `bugfix`
 
 ### K_Explosion
 
-#### MC:1.15.2-1.19.4
+#### MC:1.15.2-1.20.4
 
 Introduce the magic explosion feature that Damagesource touching water will not hurt BlockLikeEntities in 24w33a, discoverd by KD.
 
@@ -40,16 +40,16 @@ In detail, this rule will make those entities immune from TNTEntity explosion(wh
 
 * Default Value: `false`
 * Optional Parameters: `true`, `false`
-* Open Method: `/carpet kExplosionIntroduce ture`
+* Open Method: `/carpet kExplosionIntroduce true`
 * Categories: `BLUE` , `feature` , `tnt`
 
 ### SoundSuppresionIntroduce
 
-#### MC:1.15.2-1.19.4
+#### MC:1.15.2-1.20.4
 
 Introduce the sound suppressor of a calibrated sculk sensor in 1.20-1.21
 
-Place a Chest or TrappedChest and name it "SoundSuppresor" or "声音抑制器" and put a lectern at its back with 15 pages, then use the specific channels as you want.
+Place a Chest or TrappedChest and name it "SoundSuppressor" or "声音抑制器" and put a lectern at its back with 15 pages, then use the specific channels as you want.
 
 Tips:Only safe channels are transplanted, other channels are not in cosideration yet.
 
@@ -57,18 +57,18 @@ Tips:Only safe channels are transplanted, other channels are not in cosideration
 
 * Default Value: `false`
 * Optional Parameters: `true`, `false`
-* Open Method: `/carpet soundSuppressionIntroduce ture`
+* Open Method: 1.19.4-:`/carpet soundSuppressionIntroduce true`/1.20.1+:`/carpet simpleSoundSuppressor true`
 * Categories: `BLUE` , `feature`
 
 
-| Channel | Function                                                          |
-| :-----: | ----------------------------------------------------------------- |
-|    5    | Universal Shadow Items interacting with armor stand(Armor PutUp) |
-|    9    | suppress when door/trapdoor close                                 |
-|   10   | suppress when door/trapdoor open                                  |
-|   10   | TNT block not deleted on fused(TNT looting duper)                 |
-|   10   | suppress when noteblock play                                      |
-|   11   | suppress when bell rings                                          |
+| Channel | Function                                                            |
+| :-----: | ------------------------------------------------------------------- |
+|    5    | Universal Shadow Items interacting with armor stand(On Item PutUp) |
+|    9    | suppress when door/trapdoor close                                   |
+|   10   | suppress when door/trapdoor open                                    |
+|   10   | TNT block not deleted on fused(TNT looting duper)                   |
+|   10   | suppress when noteblock play                                        |
+|   11   | suppress when bell rings                                            |
 
 #### SoundSuppressionRadius
 
@@ -89,7 +89,7 @@ Now a barrel block with name "sculkcatalyst" or "幽匿催发体" will work like
 
 * Default Value: `false`
 * Optional Parameters: `true`, `false`
-* Open Method: `/carpet sculkCatalystIntroduce ture`
+* Open Method: `/carpet sculkCatalystIntroduce true`
 * Categories: `BLUE` , `feature`
 
 ### SoftCryingObsidian
@@ -105,7 +105,7 @@ Turn its hardness into endstone like the softObsidian rule
 
 ### NewWitchDropIntroduce
 
-####MC:1.15.2-1.19.4
+####MC:1.15.2-1.20.4
 
 ~"Totally Not Vanilla"~
 
@@ -113,7 +113,7 @@ Introduce the new witch drop in 1.21+
 
 * Default Value: `false`
 * Optional Parameters: `true`, `false`
-* Open Method: `/carpet newWitchDropIntroduce ture`
+* Open Method: `/carpet newWitchDropIntroduce true`
 * Categories: `BLUE` , `feature`
 
 ### EnderPearlChunkLoader

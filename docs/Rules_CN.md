@@ -14,7 +14,7 @@
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet cobWebResistanceTuner ture`
+* 开启方法: `/carpet cobWebResistanceTuner true`
 * 分类: `BLUE` , `feature`
 
 ### 跨纬度投掷物实体搜索修复
@@ -29,12 +29,12 @@
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet crossDimensionProjectileLootFix ture`
+* 开启方法: `/carpet crossDimensionProjectileLootFix true`
 * 分类: `BLUE` , `survival`, `bugfix`
 
 ### k爆低版本移植
 
-#### MC:1.15.2-1.19.4
+#### MC:1.15.2-1.20.4
 
 将k爆移植到低版本   *"这不是愚人节玩笑，奶爆原地退役!"-KD*
 
@@ -42,12 +42,12 @@
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet kExplosionIntroduce ture`
+* 开启方法: `/carpet kExplosionIntroduce true`
 * 分类: `BLUE` , `feature` , `tnt`
 
 ### 声音抑制移植
 
-#### MC:1.15.2-1.19.4
+#### MC:1.15.2-1.20.4
 
 一个部分声音抑制效果的移植
 
@@ -59,11 +59,11 @@ Tips:
 
 1.如果要防崩溃可以安装Carpet TIS Addition, 那个的防崩溃选项已经包含此处的几个方块更新频道了
 
-2.从1.17起方块实体的默认tick方法被删掉了，所以1.17+开启声音抑制/退出存档重进后需要**手动更新一下陷阱箱方块**，让他刷新一下进入抑制频道
+2.1.20.1+原本就有声音抑制，mod里的实现方法是兼容低版本的，所以和那个原理上没有任何关系
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet soundSuppressionIntroduce ture`
+* 开启方法: `/carpet soundSuppressionIntroduce true`
 * 分类: `BLUE` , `feature`
 
 具体的频道列表:
@@ -82,10 +82,12 @@ Tips:
 
 #### 声音抑制范围控制
 
-自定义声音抑制箱子的范围，输入值表示半径，1-64格，>64并不是不能实现，只是为了性能考虑
+自定义声音抑制箱子的范围，输入值表示半径，1-128格，>128并不是不能实现，只是为了性能考虑
+
+备注：仅适用于Mod中手动放置的命名箱子，并不能作用于原版
 
 * 默认值: `false`
-* 可选参数: `8`, `16`, `32`, `64`
+* 可选参数: `8`, `16`, `32`, `64`，`128`
 * 切换示例: `/carpet soundSuppressionIntroduce 64`
 * 分类: `BLUE` , `feature`
 
@@ -101,7 +103,7 @@ Tips:
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet sculkCatalystIntroduce ture`
+* 开启方法: `/carpet sculkCatalystIntroduce true`
 * 分类: `BLUE` , `feature`
 
 ### 易碎哭泣黑曜石
@@ -114,12 +116,12 @@ Tips:
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet softCryingObsidian ture`
+* 开启方法: `/carpet softCryingObsidian true`
 * 分类: `BLUE` , `feature`
 
 ### 新版女巫掉落物移植
 
-#### MC:1.15.2-1.19.4
+#### MC:1.15.2-1.20.4
 
 "~用这个功能的不要说自己在玩原版生存--YanHwa~"
 
@@ -127,16 +129,16 @@ Tips:
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet newWitchDropIntroduce ture`
+* 开启方法: `/carpet newWitchDropIntroduce true`
 * 分类: `BLUE` , `feature`
 
 ### 末影珍珠区块加载移植
 
-#### MC:1.16.5-1.19.4
+#### MC:1.16.5-1.20.4
 
 一个高版本(1.21.2+)的末影珍珠自加载功能移植，和高版本表现一致的一点是一切加载都需要**投掷珍珠的那个玩家在线**，没有Owner属性的末影珍珠是不能加载区块的
 
-目前唯一没有的功能是珍珠跨纬度传送玩家，因为末影珍珠过门的方法在游戏里未定义，不是很容易实现
+目前唯一没有的功能是珍珠跨纬度传送玩家，因为末影珍珠过门的方法在游戏里未定义，并不能在不影响原版游戏表现的情况下轻易实现
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
@@ -152,11 +154,11 @@ Tips:
 
 ### 拴绳可以栓村民
 
-#### MC:1.15.2-1.19.4
+#### MC:1.15.2-1.20.4
 
 顾名思义，让村民的是否可以被拴住改为true
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet leashableVillager ture`
+* 开启方法: `/carpet leashableVillager true`
 * 分类: `BLUE` , `feature`

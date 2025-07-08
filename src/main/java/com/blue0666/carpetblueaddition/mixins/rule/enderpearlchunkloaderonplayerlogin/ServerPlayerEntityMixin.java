@@ -59,7 +59,7 @@ abstract public class ServerPlayerEntityMixin extends PlayerEntity implements on
                 else{
                     NbtCompound pearlTag = new NbtCompound();
                     pearl.saveNbt(pearlTag);
-                    NbtElement worldNbt = World.CODEC.encodeStart(NbtOps.INSTANCE, pearl.getWorld().getRegistryKey()).getOrThrow(false, msg -> { throw new RuntimeException(msg); });
+                    NbtElement worldNbt = World.CODEC.encodeStart(NbtOps.INSTANCE, pearl.getWorld().getRegistryKey()).getOrThrow();
                     pearlTag.put("ender_pearl_dimension", worldNbt);
                     pearlsNbt.add(pearlTag);
                 }
@@ -76,7 +76,7 @@ abstract public class ServerPlayerEntityMixin extends PlayerEntity implements on
 
             for (int i = 0; i < pearlsNbt.size(); i++) {
                 NbtCompound pearlTag = pearlsNbt.getCompound(i);
-                RegistryKey<World> world = World.CODEC.parse(NbtOps.INSTANCE, pearlTag.get("ender_pearl_dimension")).getOrThrow(false, msg -> { throw new RuntimeException(msg); });
+                RegistryKey<World> world = World.CODEC.parse(NbtOps.INSTANCE, pearlTag.get("ender_pearl_dimension")).getOrThrow();
                 ServerWorld serverWorld = ((ServerPlayerEntity)(Object)this).getEntityWorld().getServer().getWorld(world);
                 //从世界的未加载区块中尝试唤醒珍珠
                 if (serverWorld!=null){

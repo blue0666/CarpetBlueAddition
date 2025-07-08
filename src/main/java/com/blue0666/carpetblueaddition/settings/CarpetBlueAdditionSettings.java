@@ -1,15 +1,37 @@
 package com.blue0666.carpetblueaddition.settings;
 
-import carpet.api.settings.CarpetRule;
-import carpet.settings.Rule;
-import carpet.api.settings.Validator;
-import com.blue0666.carpetblueaddition.CarpetBlue;
-import net.minecraft.server.command.ServerCommandSource;
+import carpet.api.settings.Rule;
+
+import static carpet.api.settings.RuleCategory.FEATURE;
+import static carpet.api.settings.RuleCategory.TNT;
 
 public class CarpetBlueAdditionSettings {
 
     public static final String BLUE = "BLUE";
 
+    @Rule(categories = {BLUE,FEATURE,TNT})
+    public static boolean kExplosionIntroduce = false;
+
+    @Rule(categories = {BLUE,FEATURE})
+    public static boolean simpleSoundSuppression = false;
+
+    @Rule(
+            categories = {BLUE,FEATURE},
+            strict=false,
+            options={"8","16","32","64","128"},
+            validators=CarpetBlueValidators.SoundSuppressionRadiusValidator.class
+    )
+    public static int soundSuppressionRadius = 16;
+
+    @Rule(categories = {BLUE,FEATURE})
+    public static boolean enderpearlLoadTicketIntroduce = false;
+
+    @Rule(categories = {BLUE,FEATURE})
+    public static boolean enderpearlDiagonalChunkLoader = false;
+
+    @Rule(categories = {BLUE,FEATURE})
+    public static boolean enderpearlChunkLoaderOnPlayerLogin = false;
+/*
     @Rule(
             desc="Introduce the new explosion feature that Damagesource touching water will not hurt BlockLikeEntities",
             category = {BLUE,"feature","tnt"}
@@ -72,5 +94,6 @@ public class CarpetBlueAdditionSettings {
     public static void onWorldLoadingStarted (){
         CarpetBlue.LOGGER.info("Carpet Blue Addition started.");
     }
+ */
 }
 

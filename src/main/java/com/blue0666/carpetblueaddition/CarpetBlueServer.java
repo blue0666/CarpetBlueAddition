@@ -12,7 +12,9 @@ import org.apache.logging.log4j.Logger;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
 
@@ -49,18 +51,18 @@ public class CarpetBlueServer implements CarpetExtension {
 
     @Override
     public Map<String, String> canHasTranslations(String lang) {
-        String dataJSON;
-        try {
-            dataJSON = IOUtils.toString(
-                    Objects.requireNonNull(Translations.class.getClassLoader().getResourceAsStream(
-                            String.format("assets/carpetblueaddition/lang/%s.json", lang))),
-                    StandardCharsets.UTF_8);
-        } catch (NullPointerException | IOException e) {
-            return null;
+        InputStream langFile = this.getClass().getClassLoader().getResourceAsStream("assets/carpetblueaddition/lang/%s.json".formatted(lang));
+        if (langFile == null) {
+            return Collections.emptyMap();
         }
-        Gson gson = new GsonBuilder().enableComplexMapKeySerialization().create();
-        return gson.fromJson(dataJSON, new TypeToken<Map<String, String>>() {
-        }.getType());
+        String jsonData;
+        try {
+            jsonData = IOUtils.toString(langFile, StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            return Collections.emptyMap();
+        }
+        Gson gson = new GsonBuilder().setLenient().create();
+        return gson.fromJson(jsonData, new TypeToken<Map<String, String>>() {}.getType());
     }
 
 }

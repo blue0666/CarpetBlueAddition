@@ -1,40 +1,21 @@
 {
   "category.BLUE": "BLUE",
 
-  "rule.cobwebResistanceTuner.name": "细雪蜘蛛网",
-  "rule.cobwebResistanceTuner.desc": "将蜘蛛网的阻力系数修改的和细雪方块完全一致",
+  "carpet.rule.kExplosionIntroduce.name": "K爆TNT移植",
+  "carpet.rule.kExplosionIntroduce.desc": "移植1.21.2+K爆特性，由team_109发现",
 
-  "rule.crossDimensionProjectileLootFix.name": "投掷物跨纬度掠夺修复",
-  "rule.crossDimensionProjectileLootFix.desc": "修复跨纬度的投掷物无法搜索到主人的bug",
+  "carpet.rule.simpleSoundSuppression.name": "声音抑制移植",
+  "carpet.rule.simpleSoundSuppression.desc": "一个更简便，可控的声音抑制器效果模拟，备注，和原版的声音抑制是完全分离的实现，为了代码兼容低版本",
 
-  "rule.kExplosionIntroduce.name": "K爆TNT移植",
-  "rule.kExplosionIntroduce.desc": "移植1.21.2+K爆特性，由team_109发现",
+  "carpet.rule.soundSuppressionRadius.name": "声音抑制器范围控制",
+  "carpet.rule.soundSuppressionRadius.desc": "控制声音抑制器的监听范围半径（是本mod的而非原版的），可输入一个正整数，原版默认为17格，为了卡顿和性能考虑，最大不能超过128",
 
-  "rule.simpleSoundSuppression.name": "声音抑制移植",
-  "rule.simpleSoundSuppression.desc": "一个更简便，可控的声音抑制器效果模拟，备注，和原版的声音抑制是完全分离的实现，为了代码兼容低版本",
+  "carpet.rule.enderpearlLoadTicketIntroduce.name": "珍珠区块加载移植",
+  "carpet.rule.enderpearlLoadTicketIntroduce.desc": "移植珍珠区块自加载，珍珠只有他的拥有者在线时可以加载，范围是1*1强加载40ticks，但是注意这会覆盖<珍珠沿轴不加载>的规则",
 
+  "carpet.rule.enderpearlDiagonalChunkLoader.name": "珍珠斜向运动区块加载",
+  "carpet.rule.enderpearlDiagonalChunkLoader.desc": "珍珠斜向运动时会加载区块，只要XZ有一个轴坐标不变就不加载，用于一些特殊的珍珠炮测试和弱加载炮运行",
 
-  "rule.soundSuppressionRadius.name": "声音抑制器范围控制",
-  "rule.soundSuppressionRadius.desc": "控制声音抑制器的监听范围半径（是本mod的而非原版的），可输入一个正整数，原版默认为17格，为了卡顿和性能考虑，最大不能超过128",
-
-  "rule.sculkCatalystIntroduce.name": "幽匿催发体移植",
-  "rule.sculkCatalystIntroduce.desc": "移植幽匿催发体，将木桶命名为幽匿催发体即可阻止范围内经验生成",
-
-  "rule.softCryingObsidian.name": "易碎哭泣黑曜石",
-  "rule.softCryingObsidian.desc": "将哭泣黑曜石的硬度修改为末地石",
-
-  "rule.newWitchDropIntroduce.name": "新版女巫掉落物移植",
-  "rule.newWitchDropIntroduce.desc": "移植新版女巫掉落物",
-
-  "rule.enderpearlLoadTicketIntroduce.name": "珍珠区块加载移植",
-  "rule.enderpearlLoadTicketIntroduce.desc": "移植珍珠区块自加载，珍珠只有他的拥有者在线时可以加载，范围是1*1强加载40ticks，但是注意这会覆盖<珍珠沿轴不加载>的规则",
-
-  "rule.enderpearlDiagonalChunkLoader.name": "珍珠斜向运动区块加载",
-  "rule.enderpearlDiagonalChunkLoader.desc": "珍珠斜向运动时会加载区块，只要XZ有一个轴坐标不变就不加载，用于一些特殊的珍珠炮测试和弱加载炮运行",
-
-  "rule.enderpearlChunkLoaderOnPlayerLogin.name": "世界重启玩家珍珠自加载",
-  "rule.enderpearlChunkLoaderOnPlayerLogin.desc": "每个玩家登录进入游戏时，他丢过末影珍珠的区块都会开始自加载",
-
-  "rule.leashableVillager.name": "拴绳可栓村民",
-  "rule.leashableVillager.desc": "拴绳右键村民可以直接拴住"
+  "carpet.rule.enderpearlChunkLoaderOnPlayerLogin.name": "世界重启玩家珍珠自加载",
+  "carpet.rule.enderpearlChunkLoaderOnPlayerLogin.desc": "每个玩家登录进入游戏时，他丢过末影珍珠的区块都会开始自加载"
 }

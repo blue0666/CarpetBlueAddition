@@ -27,7 +27,7 @@ abstract public class ChestBlockMixin extends AbstractChestBlock<ChestBlockEntit
     }
 
     @Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
-    private void onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
+    private void onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
         // 提示玩家不能打开用于更新抑制的陷阱箱
         if (CarpetBlueAdditionSettings.simpleSoundSuppression && world.getBlockEntity(pos) instanceof ChestBlockEntity) {
             String blockName = ((ChestBlockEntity) world.getBlockEntity(pos)).getDisplayName().getString();

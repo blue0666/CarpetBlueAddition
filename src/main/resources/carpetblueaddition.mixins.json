@@ -11,8 +11,6 @@
     "rule.enderpearlchunkloaderonplayerlogin.ServerPlayerEntityMixin",
     "rule.enderpearldiagonalchunkloader.EnderPearlEntityMixin",
     "rule.kexplosionintroduce.ExplosionMixin",
-    "rule.leashablevillager.MerchantEntityMixin",
-    "rule.newwitchdropIntroduce.LivingEntityMixin",
     "rule.simplesoundsuppression.AbstractBlockMixin",
     "rule.simplesoundsuppression.ArmorStandEntityMixin",
     "rule.simplesoundsuppression.BellBlockMixin",

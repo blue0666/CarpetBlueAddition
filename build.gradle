@@ -29,7 +29,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation "carpet:fabric-carpet:1.20.3-1.4.128+v231205"
+    modImplementation "carpet:fabric-carpet:1.21-1.4.147+v240613"
 }
 loom {
     accessWidenerPath = file("src/main/resources/blue.accesswidener")

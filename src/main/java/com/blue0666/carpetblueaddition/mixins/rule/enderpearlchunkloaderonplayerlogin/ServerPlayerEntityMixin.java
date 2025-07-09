@@ -5,6 +5,7 @@ import com.blue0666.carpetblueaddition.event.enderpearlChunkLoader.EnderPearlChu
 import com.blue0666.carpetblueaddition.interfaces.onChangingPlayerEnderPearlList;
 import com.blue0666.carpetblueaddition.settings.CarpetBlueAdditionSettings;
 import com.mojang.authlib.GameProfile;
+import com.mojang.logging.LogUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,10 +16,13 @@ import net.minecraft.nbt.NbtList;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.world.World;
+import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -40,6 +44,9 @@ abstract public class ServerPlayerEntityMixin extends PlayerEntity implements on
 
     @Unique
     public Set<EnderPearlEntity> enderPearls = new HashSet<>();
+    
+    @Shadow
+    private static final Logger LOGGER = LogUtils.getLogger();
 
     public ServerPlayerEntityMixin(World world, BlockPos pos, float yaw, GameProfile profile) {
         super(world, pos, yaw, profile);
@@ -59,8 +66,12 @@ abstract public class ServerPlayerEntityMixin extends PlayerEntity implements on
                 else{
                     NbtCompound pearlTag = new NbtCompound();
                     pearl.saveNbt(pearlTag);
-                    NbtElement worldNbt = World.CODEC.encodeStart(NbtOps.INSTANCE, pearl.getWorld().getRegistryKey()).getOrThrow();
-                    pearlTag.put("ender_pearl_dimension", worldNbt);
+//                    NbtElement worldNbt = World.CODEC.encodeStart(NbtOps.INSTANCE, pearl.getWorld().getRegistryKey()).getOrThrow();
+//                    pearlTag.put("ender_pearl_dimension", worldNbt);
+                    Identifier.CODEC
+                            .encodeStart(NbtOps.INSTANCE, pearl.getWorld().getRegistryKey().getValue())
+                            .resultOrPartial(LOGGER::error)
+                            .ifPresent(worldNbt -> pearlTag.put("ender_pearl_dimension", worldNbt));
                     pearlsNbt.add(pearlTag);
                 }
             }
@@ -76,8 +87,17 @@ abstract public class ServerPlayerEntityMixin extends PlayerEntity implements on
 
             for (int i = 0; i < pearlsNbt.size(); i++) {
                 NbtCompound pearlTag = pearlsNbt.getCompound(i);
-                RegistryKey<World> world = World.CODEC.parse(NbtOps.INSTANCE, pearlTag.get("ender_pearl_dimension")).getOrThrow();
-                ServerWorld serverWorld = ((ServerPlayerEntity)(Object)this).getEntityWorld().getServer().getWorld(world);
+
+                Optional<RegistryKey<World>> optional = World.CODEC
+                        .parse(NbtOps.INSTANCE, pearlTag.get("ender_pearl_dimension"))
+                        .resultOrPartial(LOGGER::error);
+                if (optional.isEmpty()) {
+                    LOGGER.warn("No dimension defined for ender pearl, skipping");
+                    return;
+                }
+                ServerWorld serverWorld = this.getWorld().getServer().getWorld(optional.get());
+//                RegistryKey<World> world = World.CODEC.parse(NbtOps.INSTANCE, pearlTag.get("ender_pearl_dimension")).getOrThrow();
+//                ServerWorld serverWorld = ((ServerPlayerEntity)(Object)this).getEntityWorld().getServer().getWorld(world);
                 //从世界的未加载区块中尝试唤醒珍珠
                 if (serverWorld!=null){
                     Entity entity = EntityType.loadEntityWithPassengers(
@@ -89,13 +109,13 @@ abstract public class ServerPlayerEntityMixin extends PlayerEntity implements on
                     } else {
                         CarpetBlue.LOGGER.warn(
                                 "Failed to spawn player ender pearl in level ({}), skipping",
-                                world
+                                optional
                         );
                     }
                 } else {
                     CarpetBlue.LOGGER.warn(
                             "Trying to load ender pearl without level ({}) being loaded, skipping",
-                            world
+                            optional
                     );
                 }
             }

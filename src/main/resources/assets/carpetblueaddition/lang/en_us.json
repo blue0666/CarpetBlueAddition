@@ -1,0 +1,21 @@
+{
+  "category.BLUE": "BLUE",
+
+  "carpet.rule.kExplosionIntroduce.name": "kExplosionIntroduce",
+  "carpet.rule.kExplosionIntroduce.desc": "Introduce the new explosion feature that Damagesource touching water will not hurt BlockLikeEntities",
+
+  "carpet.rule.simpleSoundSuppression.name": "simpleSoundSuppression",
+  "carpet.rule.simpleSoundSuppression.desc": "An easier SoundSuppressor, totally seperated from the original device",
+
+  "carpet.rule.soundSuppressionRadius.name": "soundSuppressionRadius",
+  "carpet.rule.soundSuppressionRadius.desc": "Control the suppressing detector's radius, max value 128",
+
+  "carpet.rule.enderpearlLoadTicketIntroduce.name": "enderpearlLoadTicketIntroduce",
+  "carpet.rule.enderpearlLoadTicketIntroduce.desc": "Introduce the ender_pearl chunk load ticket in 1.21.2+",
+
+  "carpet.rule.enderpearlDiagonalChunkLoader.name": "enderpearlDiagonalChunkLoader",
+  "carpet.rule.enderpearlDiagonalChunkLoader.desc": "Enables chunk loading for ender_pearl that occur diagonally (both X and Z axes), while preventing chunk load on single-axis movements.",
+
+  "carpet.rule.enderpearlChunkLoaderOnPlayerLogin.name": "enderpearlChunkLoaderOnPlayerLogin",
+  "carpet.rule.enderpearlChunkLoaderOnPlayerLogin.desc": "Now when player login in, all the pearls thrown by him will automatically be called and load chunks for 40 ticks, can work together will other loading system to permanently load chunks"
+}
